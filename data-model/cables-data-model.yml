@@ -1,0 +1,20 @@
+generated: '2026-09-18'
+method: derived
+source: openapi/cables-openapi.yml components.schemas
+note: 'Flat request/response model: each of the 168 tools defines one input schema (typically {imageUrl}
+  or {text}, some with {labels}) and shares generic ErrorResponse / SentimentResponse output schemas.
+  There are no cross-entity $ref relationships or id-reference fields — this is a stateless inference
+  API, not a resource CRUD API, so the entity-relationship graph is empty by design.'
+entities:
+- name: ToolRequest
+  note: per-tool input (imageUrl | text | labels | platform handles)
+- name: SentimentResponse
+  fields:
+  - score:number
+  - sentiment:string
+  note: declared 200 shape (generic)
+- name: ErrorResponse
+  fields:
+  - error:string
+  - code:string
+relationships: []

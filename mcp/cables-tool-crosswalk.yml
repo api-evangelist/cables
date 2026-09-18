@@ -1,0 +1,1027 @@
+generated: '2026-09-18'
+method: derived
+source: binding MCP tools/list (live) to openapi/cables-openapi.yml paths by exact tool name
+surfaces:
+  openapi: openapi/cables-openapi.yml (168 POST /tools/* operations, no operationIds — bound by path)
+  mcp:
+    endpoint: https://mcp.cables.live/mcp
+    gated: false
+    note: tools/list anonymous; execution x402-gated
+  graphql: null
+coverage:
+  tools_named: 168
+  tools_bound: 168
+  mcp_only: 0
+  rest_ops_total: 168
+  rest_ops_with_tool: 168
+crosswalk:
+- tool: analyze-image
+  category: vision
+  rest:
+  - POST /tools/analyze-image
+  binding: rest
+  confidence: high
+- tool: detect-objects
+  category: vision
+  rest:
+  - POST /tools/detect-objects
+  binding: rest
+  confidence: high
+- tool: detect-faces
+  category: vision
+  rest:
+  - POST /tools/detect-faces
+  binding: rest
+  confidence: high
+- tool: classify-image
+  category: vision
+  rest:
+  - POST /tools/classify-image
+  binding: rest
+  confidence: high
+- tool: analyze-text
+  category: nlp
+  rest:
+  - POST /tools/analyze-text
+  binding: rest
+  confidence: high
+- tool: extract-keywords
+  category: nlp
+  rest:
+  - POST /tools/extract-keywords
+  binding: rest
+  confidence: high
+- tool: detect-sentiment
+  category: nlp
+  rest:
+  - POST /tools/detect-sentiment
+  binding: rest
+  confidence: high
+- tool: detect-toxicity
+  category: nlp
+  rest:
+  - POST /tools/detect-toxicity
+  binding: rest
+  confidence: high
+- tool: embed-text
+  category: nlp
+  rest:
+  - POST /tools/embed-text
+  binding: rest
+  confidence: high
+- tool: answer-question
+  category: general
+  rest:
+  - POST /tools/answer-question
+  binding: rest
+  confidence: high
+- tool: predict-trend
+  category: general
+  rest:
+  - POST /tools/predict-trend
+  binding: rest
+  confidence: high
+- tool: forecast-data
+  category: general
+  rest:
+  - POST /tools/forecast-data
+  binding: rest
+  confidence: high
+- tool: detect-anomalies
+  category: general
+  rest:
+  - POST /tools/detect-anomalies
+  binding: rest
+  confidence: high
+- tool: cluster-data
+  category: general
+  rest:
+  - POST /tools/cluster-data
+  binding: rest
+  confidence: high
+- tool: reduce-dimensions
+  category: general
+  rest:
+  - POST /tools/reduce-dimensions
+  binding: rest
+  confidence: high
+- tool: regression
+  category: general
+  rest:
+  - POST /tools/regression
+  binding: rest
+  confidence: high
+- tool: train-model
+  category: general
+  rest:
+  - POST /tools/train-model
+  binding: rest
+  confidence: high
+- tool: ab-test
+  category: general
+  rest:
+  - POST /tools/ab-test
+  binding: rest
+  confidence: high
+- tool: analyze-youtube-thumbnails
+  category: youtube
+  rest:
+  - POST /tools/analyze-youtube-thumbnails
+  binding: rest
+  confidence: high
+- tool: classify-youtube-content
+  category: youtube
+  rest:
+  - POST /tools/classify-youtube-content
+  binding: rest
+  confidence: high
+- tool: predict-youtube-views
+  category: youtube
+  rest:
+  - POST /tools/predict-youtube-views
+  binding: rest
+  confidence: high
+- tool: youtube-comment-sentiment
+  category: youtube
+  rest:
+  - POST /tools/youtube-comment-sentiment
+  binding: rest
+  confidence: high
+- tool: youtube-channel-keywords
+  category: youtube
+  rest:
+  - POST /tools/youtube-channel-keywords
+  binding: rest
+  confidence: high
+- tool: youtube-trend-detection
+  category: youtube
+  rest:
+  - POST /tools/youtube-trend-detection
+  binding: rest
+  confidence: high
+- tool: youtube-forecast
+  category: youtube
+  rest:
+  - POST /tools/youtube-forecast
+  binding: rest
+  confidence: high
+- tool: youtube-anomaly-detection
+  category: youtube
+  rest:
+  - POST /tools/youtube-anomaly-detection
+  binding: rest
+  confidence: high
+- tool: youtube-thumbnail-comparison
+  category: youtube
+  rest:
+  - POST /tools/youtube-thumbnail-comparison
+  binding: rest
+  confidence: high
+- tool: youtube-topic-clustering
+  category: youtube
+  rest:
+  - POST /tools/youtube-topic-clustering
+  binding: rest
+  confidence: high
+- tool: analyze-instagram-images
+  category: instagram
+  rest:
+  - POST /tools/analyze-instagram-images
+  binding: rest
+  confidence: high
+- tool: predict-instagram-engagement
+  category: instagram
+  rest:
+  - POST /tools/predict-instagram-engagement
+  binding: rest
+  confidence: high
+- tool: classify-instagram-content
+  category: instagram
+  rest:
+  - POST /tools/classify-instagram-content
+  binding: rest
+  confidence: high
+- tool: instagram-caption-sentiment
+  category: instagram
+  rest:
+  - POST /tools/instagram-caption-sentiment
+  binding: rest
+  confidence: high
+- tool: instagram-hashtag-extraction
+  category: instagram
+  rest:
+  - POST /tools/instagram-hashtag-extraction
+  binding: rest
+  confidence: high
+- tool: instagram-visual-trends
+  category: instagram
+  rest:
+  - POST /tools/instagram-visual-trends
+  binding: rest
+  confidence: high
+- tool: instagram-follower-forecast
+  category: instagram
+  rest:
+  - POST /tools/instagram-follower-forecast
+  binding: rest
+  confidence: high
+- tool: instagram-anomaly-detection
+  category: instagram
+  rest:
+  - POST /tools/instagram-anomaly-detection
+  binding: rest
+  confidence: high
+- tool: instagram-post-comparison
+  category: instagram
+  rest:
+  - POST /tools/instagram-post-comparison
+  binding: rest
+  confidence: high
+- tool: instagram-content-clustering
+  category: instagram
+  rest:
+  - POST /tools/instagram-content-clustering
+  binding: rest
+  confidence: high
+- tool: analyze-tiktok-thumbnails
+  category: tiktok
+  rest:
+  - POST /tools/analyze-tiktok-thumbnails
+  binding: rest
+  confidence: high
+- tool: predict-tiktok-virality
+  category: tiktok
+  rest:
+  - POST /tools/predict-tiktok-virality
+  binding: rest
+  confidence: high
+- tool: classify-tiktok-content
+  category: tiktok
+  rest:
+  - POST /tools/classify-tiktok-content
+  binding: rest
+  confidence: high
+- tool: tiktok-content-sentiment
+  category: tiktok
+  rest:
+  - POST /tools/tiktok-content-sentiment
+  binding: rest
+  confidence: high
+- tool: tiktok-trending-topics
+  category: tiktok
+  rest:
+  - POST /tools/tiktok-trending-topics
+  binding: rest
+  confidence: high
+- tool: tiktok-view-patterns
+  category: tiktok
+  rest:
+  - POST /tools/tiktok-view-patterns
+  binding: rest
+  confidence: high
+- tool: tiktok-follower-forecast
+  category: tiktok
+  rest:
+  - POST /tools/tiktok-follower-forecast
+  binding: rest
+  confidence: high
+- tool: tiktok-anomaly-detection
+  category: tiktok
+  rest:
+  - POST /tools/tiktok-anomaly-detection
+  binding: rest
+  confidence: high
+- tool: tiktok-thumbnail-comparison
+  category: tiktok
+  rest:
+  - POST /tools/tiktok-thumbnail-comparison
+  binding: rest
+  confidence: high
+- tool: tiktok-content-clustering
+  category: tiktok
+  rest:
+  - POST /tools/tiktok-content-clustering
+  binding: rest
+  confidence: high
+- tool: twitter-content-keywords
+  category: twitter
+  rest:
+  - POST /tools/twitter-content-keywords
+  binding: rest
+  confidence: high
+- tool: predict-twitter-engagement
+  category: twitter
+  rest:
+  - POST /tools/predict-twitter-engagement
+  binding: rest
+  confidence: high
+- tool: classify-twitter-topics
+  category: twitter
+  rest:
+  - POST /tools/classify-twitter-topics
+  binding: rest
+  confidence: high
+- tool: twitter-toxicity-detection
+  category: twitter
+  rest:
+  - POST /tools/twitter-toxicity-detection
+  binding: rest
+  confidence: high
+- tool: twitter-sentiment-analysis
+  category: twitter
+  rest:
+  - POST /tools/twitter-sentiment-analysis
+  binding: rest
+  confidence: high
+- tool: twitter-keyword-extraction
+  category: twitter
+  rest:
+  - POST /tools/twitter-keyword-extraction
+  binding: rest
+  confidence: high
+- tool: twitter-follower-forecast
+  category: twitter
+  rest:
+  - POST /tools/twitter-follower-forecast
+  binding: rest
+  confidence: high
+- tool: twitter-anomaly-detection
+  category: twitter
+  rest:
+  - POST /tools/twitter-anomaly-detection
+  binding: rest
+  confidence: high
+- tool: twitter-tweet-comparison
+  category: twitter
+  rest:
+  - POST /tools/twitter-tweet-comparison
+  binding: rest
+  confidence: high
+- tool: twitter-topic-clustering
+  category: twitter
+  rest:
+  - POST /tools/twitter-topic-clustering
+  binding: rest
+  confidence: high
+- tool: analyze-facebook-content
+  category: facebook
+  rest:
+  - POST /tools/analyze-facebook-content
+  binding: rest
+  confidence: high
+- tool: predict-facebook-engagement
+  category: facebook
+  rest:
+  - POST /tools/predict-facebook-engagement
+  binding: rest
+  confidence: high
+- tool: classify-facebook-topics
+  category: facebook
+  rest:
+  - POST /tools/classify-facebook-topics
+  binding: rest
+  confidence: high
+- tool: facebook-comment-sentiment
+  category: facebook
+  rest:
+  - POST /tools/facebook-comment-sentiment
+  binding: rest
+  confidence: high
+- tool: facebook-post-keywords
+  category: facebook
+  rest:
+  - POST /tools/facebook-post-keywords
+  binding: rest
+  confidence: high
+- tool: facebook-posting-trends
+  category: facebook
+  rest:
+  - POST /tools/facebook-posting-trends
+  binding: rest
+  confidence: high
+- tool: facebook-growth-forecast
+  category: facebook
+  rest:
+  - POST /tools/facebook-growth-forecast
+  binding: rest
+  confidence: high
+- tool: facebook-anomaly-detection
+  category: facebook
+  rest:
+  - POST /tools/facebook-anomaly-detection
+  binding: rest
+  confidence: high
+- tool: facebook-visual-comparison
+  category: facebook
+  rest:
+  - POST /tools/facebook-visual-comparison
+  binding: rest
+  confidence: high
+- tool: facebook-content-clustering
+  category: facebook
+  rest:
+  - POST /tools/facebook-content-clustering
+  binding: rest
+  confidence: high
+- tool: discord-sentiment-analysis
+  category: discord
+  rest:
+  - POST /tools/discord-sentiment-analysis
+  binding: rest
+  confidence: high
+- tool: discord-toxicity-detection
+  category: discord
+  rest:
+  - POST /tools/discord-toxicity-detection
+  binding: rest
+  confidence: high
+- tool: predict-discord-engagement
+  category: discord
+  rest:
+  - POST /tools/predict-discord-engagement
+  binding: rest
+  confidence: high
+- tool: classify-discord-topics
+  category: discord
+  rest:
+  - POST /tools/classify-discord-topics
+  binding: rest
+  confidence: high
+- tool: discord-keyword-extraction
+  category: discord
+  rest:
+  - POST /tools/discord-keyword-extraction
+  binding: rest
+  confidence: high
+- tool: discord-activity-patterns
+  category: discord
+  rest:
+  - POST /tools/discord-activity-patterns
+  binding: rest
+  confidence: high
+- tool: discord-growth-forecast
+  category: discord
+  rest:
+  - POST /tools/discord-growth-forecast
+  binding: rest
+  confidence: high
+- tool: discord-anomaly-detection
+  category: discord
+  rest:
+  - POST /tools/discord-anomaly-detection
+  binding: rest
+  confidence: high
+- tool: discord-channel-comparison
+  category: discord
+  rest:
+  - POST /tools/discord-channel-comparison
+  binding: rest
+  confidence: high
+- tool: discord-member-clustering
+  category: discord
+  rest:
+  - POST /tools/discord-member-clustering
+  binding: rest
+  confidence: high
+- tool: analyze-twitch-content
+  category: twitch
+  rest:
+  - POST /tools/analyze-twitch-content
+  binding: rest
+  confidence: high
+- tool: predict-twitch-viewers
+  category: twitch
+  rest:
+  - POST /tools/predict-twitch-viewers
+  binding: rest
+  confidence: high
+- tool: classify-twitch-games
+  category: twitch
+  rest:
+  - POST /tools/classify-twitch-games
+  binding: rest
+  confidence: high
+- tool: twitch-chat-sentiment
+  category: twitch
+  rest:
+  - POST /tools/twitch-chat-sentiment
+  binding: rest
+  confidence: high
+- tool: twitch-keyword-extraction
+  category: twitch
+  rest:
+  - POST /tools/twitch-keyword-extraction
+  binding: rest
+  confidence: high
+- tool: twitch-viewer-trends
+  category: twitch
+  rest:
+  - POST /tools/twitch-viewer-trends
+  binding: rest
+  confidence: high
+- tool: twitch-growth-forecast
+  category: twitch
+  rest:
+  - POST /tools/twitch-growth-forecast
+  binding: rest
+  confidence: high
+- tool: twitch-anomaly-detection
+  category: twitch
+  rest:
+  - POST /tools/twitch-anomaly-detection
+  binding: rest
+  confidence: high
+- tool: twitch-clip-comparison
+  category: twitch
+  rest:
+  - POST /tools/twitch-clip-comparison
+  binding: rest
+  confidence: high
+- tool: twitch-stream-clustering
+  category: twitch
+  rest:
+  - POST /tools/twitch-stream-clustering
+  binding: rest
+  confidence: high
+- tool: reddit-sentiment-analysis
+  category: reddit
+  rest:
+  - POST /tools/reddit-sentiment-analysis
+  binding: rest
+  confidence: high
+- tool: reddit-toxicity-detection
+  category: reddit
+  rest:
+  - POST /tools/reddit-toxicity-detection
+  binding: rest
+  confidence: high
+- tool: predict-reddit-engagement
+  category: reddit
+  rest:
+  - POST /tools/predict-reddit-engagement
+  binding: rest
+  confidence: high
+- tool: classify-reddit-topics
+  category: reddit
+  rest:
+  - POST /tools/classify-reddit-topics
+  binding: rest
+  confidence: high
+- tool: reddit-keyword-extraction
+  category: reddit
+  rest:
+  - POST /tools/reddit-keyword-extraction
+  binding: rest
+  confidence: high
+- tool: reddit-trend-detection
+  category: reddit
+  rest:
+  - POST /tools/reddit-trend-detection
+  binding: rest
+  confidence: high
+- tool: reddit-growth-forecast
+  category: reddit
+  rest:
+  - POST /tools/reddit-growth-forecast
+  binding: rest
+  confidence: high
+- tool: reddit-anomaly-detection
+  category: reddit
+  rest:
+  - POST /tools/reddit-anomaly-detection
+  binding: rest
+  confidence: high
+- tool: reddit-post-comparison
+  category: reddit
+  rest:
+  - POST /tools/reddit-post-comparison
+  binding: rest
+  confidence: high
+- tool: reddit-community-clustering
+  category: reddit
+  rest:
+  - POST /tools/reddit-community-clustering
+  binding: rest
+  confidence: high
+- tool: linkedin-sentiment-analysis
+  category: linkedin
+  rest:
+  - POST /tools/linkedin-sentiment-analysis
+  binding: rest
+  confidence: high
+- tool: predict-linkedin-engagement
+  category: linkedin
+  rest:
+  - POST /tools/predict-linkedin-engagement
+  binding: rest
+  confidence: high
+- tool: classify-linkedin-topics
+  category: linkedin
+  rest:
+  - POST /tools/classify-linkedin-topics
+  binding: rest
+  confidence: high
+- tool: linkedin-keyword-extraction
+  category: linkedin
+  rest:
+  - POST /tools/linkedin-keyword-extraction
+  binding: rest
+  confidence: high
+- tool: linkedin-trend-detection
+  category: linkedin
+  rest:
+  - POST /tools/linkedin-trend-detection
+  binding: rest
+  confidence: high
+- tool: linkedin-growth-forecast
+  category: linkedin
+  rest:
+  - POST /tools/linkedin-growth-forecast
+  binding: rest
+  confidence: high
+- tool: linkedin-anomaly-detection
+  category: linkedin
+  rest:
+  - POST /tools/linkedin-anomaly-detection
+  binding: rest
+  confidence: high
+- tool: linkedin-post-comparison
+  category: linkedin
+  rest:
+  - POST /tools/linkedin-post-comparison
+  binding: rest
+  confidence: high
+- tool: linkedin-content-clustering
+  category: linkedin
+  rest:
+  - POST /tools/linkedin-content-clustering
+  binding: rest
+  confidence: high
+- tool: linkedin-audience-segmentation
+  category: linkedin
+  rest:
+  - POST /tools/linkedin-audience-segmentation
+  binding: rest
+  confidence: high
+- tool: threads-sentiment-analysis
+  category: threads
+  rest:
+  - POST /tools/threads-sentiment-analysis
+  binding: rest
+  confidence: high
+- tool: threads-toxicity-detection
+  category: threads
+  rest:
+  - POST /tools/threads-toxicity-detection
+  binding: rest
+  confidence: high
+- tool: predict-threads-engagement
+  category: threads
+  rest:
+  - POST /tools/predict-threads-engagement
+  binding: rest
+  confidence: high
+- tool: classify-threads-topics
+  category: threads
+  rest:
+  - POST /tools/classify-threads-topics
+  binding: rest
+  confidence: high
+- tool: threads-keyword-extraction
+  category: threads
+  rest:
+  - POST /tools/threads-keyword-extraction
+  binding: rest
+  confidence: high
+- tool: threads-trend-detection
+  category: threads
+  rest:
+  - POST /tools/threads-trend-detection
+  binding: rest
+  confidence: high
+- tool: threads-growth-forecast
+  category: threads
+  rest:
+  - POST /tools/threads-growth-forecast
+  binding: rest
+  confidence: high
+- tool: threads-anomaly-detection
+  category: threads
+  rest:
+  - POST /tools/threads-anomaly-detection
+  binding: rest
+  confidence: high
+- tool: threads-post-comparison
+  category: threads
+  rest:
+  - POST /tools/threads-post-comparison
+  binding: rest
+  confidence: high
+- tool: threads-content-clustering
+  category: threads
+  rest:
+  - POST /tools/threads-content-clustering
+  binding: rest
+  confidence: high
+- tool: bluesky-sentiment-analysis
+  category: bluesky
+  rest:
+  - POST /tools/bluesky-sentiment-analysis
+  binding: rest
+  confidence: high
+- tool: bluesky-toxicity-detection
+  category: bluesky
+  rest:
+  - POST /tools/bluesky-toxicity-detection
+  binding: rest
+  confidence: high
+- tool: predict-bluesky-engagement
+  category: bluesky
+  rest:
+  - POST /tools/predict-bluesky-engagement
+  binding: rest
+  confidence: high
+- tool: classify-bluesky-topics
+  category: bluesky
+  rest:
+  - POST /tools/classify-bluesky-topics
+  binding: rest
+  confidence: high
+- tool: bluesky-keyword-extraction
+  category: bluesky
+  rest:
+  - POST /tools/bluesky-keyword-extraction
+  binding: rest
+  confidence: high
+- tool: bluesky-trend-detection
+  category: bluesky
+  rest:
+  - POST /tools/bluesky-trend-detection
+  binding: rest
+  confidence: high
+- tool: bluesky-growth-forecast
+  category: bluesky
+  rest:
+  - POST /tools/bluesky-growth-forecast
+  binding: rest
+  confidence: high
+- tool: bluesky-anomaly-detection
+  category: bluesky
+  rest:
+  - POST /tools/bluesky-anomaly-detection
+  binding: rest
+  confidence: high
+- tool: bluesky-post-comparison
+  category: bluesky
+  rest:
+  - POST /tools/bluesky-post-comparison
+  binding: rest
+  confidence: high
+- tool: bluesky-content-clustering
+  category: bluesky
+  rest:
+  - POST /tools/bluesky-content-clustering
+  binding: rest
+  confidence: high
+- tool: mastodon-sentiment-analysis
+  category: mastodon
+  rest:
+  - POST /tools/mastodon-sentiment-analysis
+  binding: rest
+  confidence: high
+- tool: mastodon-toxicity-detection
+  category: mastodon
+  rest:
+  - POST /tools/mastodon-toxicity-detection
+  binding: rest
+  confidence: high
+- tool: predict-mastodon-engagement
+  category: mastodon
+  rest:
+  - POST /tools/predict-mastodon-engagement
+  binding: rest
+  confidence: high
+- tool: classify-mastodon-topics
+  category: mastodon
+  rest:
+  - POST /tools/classify-mastodon-topics
+  binding: rest
+  confidence: high
+- tool: mastodon-keyword-extraction
+  category: mastodon
+  rest:
+  - POST /tools/mastodon-keyword-extraction
+  binding: rest
+  confidence: high
+- tool: mastodon-trend-detection
+  category: mastodon
+  rest:
+  - POST /tools/mastodon-trend-detection
+  binding: rest
+  confidence: high
+- tool: mastodon-growth-forecast
+  category: mastodon
+  rest:
+  - POST /tools/mastodon-growth-forecast
+  binding: rest
+  confidence: high
+- tool: mastodon-anomaly-detection
+  category: mastodon
+  rest:
+  - POST /tools/mastodon-anomaly-detection
+  binding: rest
+  confidence: high
+- tool: mastodon-status-comparison
+  category: mastodon
+  rest:
+  - POST /tools/mastodon-status-comparison
+  binding: rest
+  confidence: high
+- tool: mastodon-content-clustering
+  category: mastodon
+  rest:
+  - POST /tools/mastodon-content-clustering
+  binding: rest
+  confidence: high
+- tool: github-issue-sentiment
+  category: github
+  rest:
+  - POST /tools/github-issue-sentiment
+  binding: rest
+  confidence: high
+- tool: classify-github-issues
+  category: github
+  rest:
+  - POST /tools/classify-github-issues
+  binding: rest
+  confidence: high
+- tool: github-keyword-extraction
+  category: github
+  rest:
+  - POST /tools/github-keyword-extraction
+  binding: rest
+  confidence: high
+- tool: github-trend-detection
+  category: github
+  rest:
+  - POST /tools/github-trend-detection
+  binding: rest
+  confidence: high
+- tool: github-growth-forecast
+  category: github
+  rest:
+  - POST /tools/github-growth-forecast
+  binding: rest
+  confidence: high
+- tool: github-anomaly-detection
+  category: github
+  rest:
+  - POST /tools/github-anomaly-detection
+  binding: rest
+  confidence: high
+- tool: github-repo-comparison
+  category: github
+  rest:
+  - POST /tools/github-repo-comparison
+  binding: rest
+  confidence: high
+- tool: github-issue-clustering
+  category: github
+  rest:
+  - POST /tools/github-issue-clustering
+  binding: rest
+  confidence: high
+- tool: predict-github-issue-engagement
+  category: github
+  rest:
+  - POST /tools/predict-github-issue-engagement
+  binding: rest
+  confidence: high
+- tool: github-contributor-patterns
+  category: github
+  rest:
+  - POST /tools/github-contributor-patterns
+  binding: rest
+  confidence: high
+- tool: spotify-track-sentiment
+  category: spotify
+  rest:
+  - POST /tools/spotify-track-sentiment
+  binding: rest
+  confidence: high
+- tool: spotify-genre-classification
+  category: spotify
+  rest:
+  - POST /tools/spotify-genre-classification
+  binding: rest
+  confidence: high
+- tool: predict-spotify-popularity
+  category: spotify
+  rest:
+  - POST /tools/predict-spotify-popularity
+  binding: rest
+  confidence: high
+- tool: spotify-audio-keywords
+  category: spotify
+  rest:
+  - POST /tools/spotify-audio-keywords
+  binding: rest
+  confidence: high
+- tool: spotify-trend-detection
+  category: spotify
+  rest:
+  - POST /tools/spotify-trend-detection
+  binding: rest
+  confidence: high
+- tool: spotify-growth-forecast
+  category: spotify
+  rest:
+  - POST /tools/spotify-growth-forecast
+  binding: rest
+  confidence: high
+- tool: spotify-anomaly-detection
+  category: spotify
+  rest:
+  - POST /tools/spotify-anomaly-detection
+  binding: rest
+  confidence: high
+- tool: spotify-track-comparison
+  category: spotify
+  rest:
+  - POST /tools/spotify-track-comparison
+  binding: rest
+  confidence: high
+- tool: spotify-playlist-clustering
+  category: spotify
+  rest:
+  - POST /tools/spotify-playlist-clustering
+  binding: rest
+  confidence: high
+- tool: spotify-audio-analysis
+  category: spotify
+  rest:
+  - POST /tools/spotify-audio-analysis
+  binding: rest
+  confidence: high
+- tool: analyze-pinterest-images
+  category: pinterest
+  rest:
+  - POST /tools/analyze-pinterest-images
+  binding: rest
+  confidence: high
+- tool: predict-pinterest-engagement
+  category: pinterest
+  rest:
+  - POST /tools/predict-pinterest-engagement
+  binding: rest
+  confidence: high
+- tool: classify-pinterest-content
+  category: pinterest
+  rest:
+  - POST /tools/classify-pinterest-content
+  binding: rest
+  confidence: high
+- tool: pinterest-keyword-extraction
+  category: pinterest
+  rest:
+  - POST /tools/pinterest-keyword-extraction
+  binding: rest
+  confidence: high
+- tool: pinterest-trend-detection
+  category: pinterest
+  rest:
+  - POST /tools/pinterest-trend-detection
+  binding: rest
+  confidence: high
+- tool: pinterest-growth-forecast
+  category: pinterest
+  rest:
+  - POST /tools/pinterest-growth-forecast
+  binding: rest
+  confidence: high
+- tool: pinterest-anomaly-detection
+  category: pinterest
+  rest:
+  - POST /tools/pinterest-anomaly-detection
+  binding: rest
+  confidence: high
+- tool: pinterest-pin-comparison
+  category: pinterest
+  rest:
+  - POST /tools/pinterest-pin-comparison
+  binding: rest
+  confidence: high
+- tool: pinterest-board-clustering
+  category: pinterest
+  rest:
+  - POST /tools/pinterest-board-clustering
+  binding: rest
+  confidence: high
+- tool: pinterest-audience-analysis
+  category: pinterest
+  rest:
+  - POST /tools/pinterest-audience-analysis
+  binding: rest
+  confidence: high
+mcp_only: []
+rest_only: []

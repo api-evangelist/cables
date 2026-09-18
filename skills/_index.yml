@@ -1,0 +1,43 @@
+generated: '2026-09-18'
+method: generated
+source: openapi/cables-openapi.yml + live MCP tools/list — grounded in real tool names
+skills:
+- file: cables-image-vision-analysis.md
+  name: Image & vision analysis
+  api: openapi/cables-openapi.yml
+  operations:
+  - analyze-image
+  - detect-objects
+  - detect-faces
+  - classify-image
+- file: cables-text-nlp-analysis.md
+  name: Text & NLP analysis
+  api: openapi/cables-openapi.yml
+  operations:
+  - detect-sentiment
+  - detect-toxicity
+  - extract-keywords
+  - embed-text
+  - answer-question
+  - analyze-text
+- file: cables-data-forecasting.md
+  name: Data forecasting & anomaly detection
+  api: openapi/cables-openapi.yml
+  operations:
+  - forecast-data
+  - predict-trend
+  - detect-anomalies
+  - cluster-data
+  - regression
+  - reduce-dimensions
+  - ab-test
+- file: cables-social-media-analytics.md
+  name: Social-media analytics
+  api: openapi/cables-openapi.yml
+  operations:
+  - youtube-comment-sentiment
+  - predict-youtube-views
+  - youtube-trend-detection
+  - youtube-forecast
+  - classify-youtube-content
+  - analyze-youtube-thumbnails

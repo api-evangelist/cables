@@ -1,0 +1,38 @@
+generated: '2026-09-18'
+method: derived
+source: openapi/cables-openapi.yml + live MCP/x402 behavior
+base_url: https://mcp.cables.live
+api_style: JSON over HTTPS POST; MCP tools over streamable HTTP
+authentication:
+  scheme: none for discovery; x402 micropayment per tool call
+  detail: authentication/cables-authentication.yml
+idempotency:
+  supported: false
+  coverage: none
+  note: No Idempotency-Key header or replay-protection documented. Tool calls are stateless ML-inference
+    reads (no persisted mutation), so replay is functionally safe but there is no server-side idempotency
+    contract.
+reversibility:
+  applicable: na
+  note: All 168 tools are read-only ML analysis/inference over supplied inputs (image URLs, text, public
+    social handles). No write/mutation surface exists, so cancel/refund/undo do not apply. Payment settlement
+    itself is on-chain (Solana) and outside the API contract.
+dry_run_mode: na
+pagination:
+  supported: false
+  note: Single-shot analysis calls; no list/collection pagination.
+error_envelope:
+  schema: '{error, code}'
+  detail: errors/cables-problem-types.yml
+payment_convention:
+  protocol: x402
+  challenge: HTTP 402 + Payment-Required header (Base64 x402 object)
+  price: $0.05 USD per call
+  settlement: USDC Solana devnet
+versioning:
+  server_version: 2.0.0
+  spec_version: 1.0.0
+  scheme: unversioned path (/tools/{name})
+rate_limit_signaling:
+  documented: false
+  detail: rate-limits/cables-rate-limits.yml

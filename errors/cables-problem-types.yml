@@ -1,0 +1,26 @@
+generated: '2026-09-18'
+method: derived
+format: custom+x402
+source: openapi/cables-openapi.yml responses (uniform across all 168 operations)
+envelope:
+  schema: ErrorResponse
+  fields:
+    error: string (required)
+    code: string
+note: Every operation declares the same four responses. The 402 is an x402 Payment-Required challenge
+  (Base64-encoded x402 PaymentRequired object in the Payment-Required response header), not a application/problem+json
+  body. 200 responses are declared against a SentimentResponse schema for all tools (a spec-generation
+  artifact; actual tool output varies by model).
+problems:
+- status: 400
+  title: Bad Request
+  schema: ErrorResponse
+  meaning: Malformed request body / missing required input (e.g. imageUrl, text).
+- status: 402
+  title: Payment Required — x402 challenge
+  header: Payment-Required (Base64 x402 PaymentRequired object)
+  meaning: Unpaid tool call; client must present an x402 payment (Solana devnet USDC, $0.05) and retry.
+- status: 500
+  title: Internal Server Error
+  schema: ErrorResponse
+  meaning: Model inference or server-side failure.

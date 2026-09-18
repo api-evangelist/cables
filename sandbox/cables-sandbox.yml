@@ -1,0 +1,14 @@
+generated: '2026-09-18'
+method: searched
+source: openapi/cables-openapi.yml x-payment-info + x-guidance
+note: The entire service currently runs against Solana DEVNET — payments settle in devnet USDC, so all
+  usage is effectively test-mode. There is no separate live/test key split (access is anonymous + x402-payment-gated,
+  no API keys). To exercise a tool an agent funds a Solana devnet wallet with test USDC and pays the $0.05
+  x402 challenge.
+test_mode:
+  network: solana devnet
+  payTo: 9JsHkfFkvqiJbRZyEPkY11j6V14Ex11K6fAb4Lyf3a1x
+  scheme: exact
+  price_usd: 0.05
+  currency: USDC-devnet
+live_mode: not published (devnet only as of probe date)

@@ -1,0 +1,17 @@
+generated: '2026-09-18'
+method: probed
+source: openapi/cables-openapi.yml x-payment-info (machine-readable per-operation pricing)
+model: usage-based / pay-per-call
+currency: USD
+plan_count: 1
+plans:
+- name: Pay-per-call
+  price: 0.05
+  currency: USD
+  unit: per tool call
+  billing: 'x402 micropayment settled in USDC on Solana devnet (scheme: exact)'
+  included_quota: none — every call is metered
+  overage: n/a (each call priced identically)
+  note: Flat $0.05 per call across all 168 tools; no free tier, no subscription. Unpaid calls receive
+    HTTP 402.
+note: No subscription plans or free tier published; pricing is exclusively per-call via x402.

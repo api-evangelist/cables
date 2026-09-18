@@ -1,0 +1,17 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Cables (TensorFlow.js Social Media MCP Server)
+  version: 1.0.0
+extends: openapi/cables-openapi.yml
+actions:
+- target: $.info
+  update:
+    x-apievangelist-enriched: '2026-09-18'
+    x-mcp-endpoint: https://mcp.cables.live/mcp
+    x-payment-protocol: x402
+    x-payment-network: solana-devnet
+    x-price-usd: 0.05
+- target: $.info
+  update:
+    x-tool-count: 168
+    x-agent-native: true

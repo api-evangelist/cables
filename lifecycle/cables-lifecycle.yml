@@ -1,0 +1,18 @@
+generated: '2026-09-18'
+method: searched
+source: https://mcp.cables.live/health + openapi/cables-openapi.yml + MCP serverInfo
+versioning:
+  scheme: server-version
+  server_version: 2.0.0
+  spec_version: 1.0.0
+  mcp_protocol: '2025-06-18'
+deprecation:
+  policy_url: null
+  sunset_header: false
+sla:
+  url: null
+status_page: null
+health_endpoint: https://mcp.cables.live/health
+note: No status page, deprecation policy, or SLA published. Version signal comes from GET /health (version
+  2.0.0) and the MCP serverInfo. No StatusPage/Deprecation pointers emitted (none found).
+deprecated_operations: []

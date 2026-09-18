@@ -1,0 +1,20 @@
+generated: '2026-09-18'
+method: searched
+source: https://mcp.cables.live/openapi.json + live MCP handshake
+summary:
+  types:
+  - none-for-discovery
+  - x402-payment-for-execution
+  security_schemes_declared: 0
+model: 'The OpenAPI declares NO securitySchemes and applies no global security. Discovery is fully anonymous:
+  GET /openapi.json, the MCP initialize/tools/list handshake, and GET /health all succeed without credentials.
+  ACCESS CONTROL IS ECONOMIC, not credential-based: executing any tool requires an x402 micropayment.
+  An unpaid call returns HTTP 402 with a Base64-encoded x402 PaymentRequired object in the Payment-Required
+  header; the agent settles $0.05 USDC on Solana devnet (scheme "exact", payTo a fixed Solana address)
+  and retries.'
+payment:
+  protocol: x402
+  network: solana:5eykt4UsFv8P8NJdTREpY1vzqKqZKvdp
+  scheme: exact
+  price_usd: 0.05
+  settlement: USDC on Solana devnet

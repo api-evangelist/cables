@@ -1,0 +1,102 @@
+name: Cables
+description: An agent-native, pay-per-call MCP resource server exposing 168 TensorFlow.js machine-learning
+  analytics tools (image classification, object detection, NLP, forecasting, and social-media analytics
+  for YouTube, Instagram, TikTok, Twitter/X, Facebook, Discord, and Twitch). Each tool call is monetized
+  via the x402 payment protocol at $0.05 per call, settled in USDC on Solana devnet. Unpaid requests receive
+  an HTTP 402 challenge.
+url: https://raw.githubusercontent.com/api-evangelist/https-mcp-cables-live-openapi-json/refs/heads/main/apis.yml
+created: '2026-09-18'
+modified: '2026-09-18'
+specificationVersion: '0.21'
+tags:
+- mcp-server
+- agent-native
+- x402
+- pay-per-call
+- machine-learning
+- tensorflow-js
+- nlp
+- computer-vision
+- social-media-analytics
+- openapi
+- solana
+- crypto-payments
+- testnet-devnet
+apis:
+- name: TensorFlow.js Social Media MCP Server
+  description: Hosted MCP resource server offering 168 ML analytics tools invoked via POST, gated by the
+    x402 payment protocol (Solana devnet USDC). Machine-readable OpenAPI 3.0.0 contract available publicly.
+  humanURL: https://mcp.cables.live
+  baseURL: https://mcp.cables.live
+  tags:
+  - mcp-server
+  - agent-native
+  - x402
+  - pay-per-call
+  - machine-learning
+  - tensorflow-js
+  - nlp
+  - computer-vision
+  - social-media-analytics
+  - openapi
+  - solana
+  - crypto-payments
+  - testnet-devnet
+  properties:
+  - type: OpenAPI
+    url: openapi/cables-openapi.yml
+  - type: OpenAPI
+    name: OpenAPI (provider-hosted)
+    url: https://mcp.cables.live/openapi.json
+  - type: MCPServer
+    url: mcp/cables-mcp.yml
+  - type: MCPServer
+    name: MCP endpoint (live)
+    url: https://mcp.cables.live/mcp
+  - type: ToolCrosswalk
+    url: mcp/cables-tool-crosswalk.yml
+maintainers:
+- FN: TensorFlow.js Social Media MCP Server
+  url: https://mcp.cables.live
+common:
+- type: Website
+  url: https://cables.live
+- type: Authentication
+  url: authentication/cables-authentication.yml
+- type: AgenticAccess
+  url: agentic-access/cables-agentic-access.yml
+- type: DomainSecurity
+  url: security/cables-domain-security.yml
+- type: Conformance
+  url: conformance/cables-conformance.yml
+- type: ErrorCatalog
+  url: errors/cables-problem-types.yml
+- type: Conventions
+  url: conventions/cables-conventions.yml
+- type: Overlay
+  url: overlays/cables-openapi-overlay.yaml
+- type: DataModel
+  url: data-model/cables-data-model.yml
+- type: Plans
+  url: plans/cables-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/cables-rate-limits.yml
+- type: Sandbox
+  url: sandbox/cables-sandbox.yml
+- type: Lifecycle
+  url: lifecycle/cables-lifecycle.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: LLMsTxt
+  url: llms/cables-llms.txt
+generated:
+  by: apis.io/add
+  model: claude-opus-4-8
+  confidence: 85
+  at: '2026-09-18T14:11:39.081Z'
+aid: cables
+x-enrichment:
+  date: '2026-09-18'
+  status: enriched
+  artifacts_added: 22
+  pass: local-v3

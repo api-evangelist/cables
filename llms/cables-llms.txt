@@ -1,0 +1,27 @@
+# Cables — TensorFlow.js Social Media MCP Server
+
+> An agent-native, pay-per-call MCP resource server exposing 168 TensorFlow.js machine-learning analytics tools (image classification, object detection, faces, NLP sentiment/toxicity/keywords/embeddings, forecasting/anomaly/clustering, and per-platform social analytics for YouTube, Instagram, TikTok, Twitter/X, Facebook, Discord, Twitch, Reddit, LinkedIn, Threads, Bluesky, Mastodon, GitHub, Spotify and Pinterest). Every tool call is metered at $0.05 via the x402 payment protocol, settled in USDC on Solana devnet; unpaid calls receive an HTTP 402 challenge. Discovery (tools/list, OpenAPI, health) is free and anonymous.
+
+## Endpoints
+- MCP server (streamable HTTP): https://mcp.cables.live/mcp
+- OpenAPI 3.0.0 (168 operations): https://mcp.cables.live/openapi.json
+- Health: https://mcp.cables.live/health
+
+## Specs
+- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/https-mcp-cables-live-openapi-json/refs/heads/main/openapi/cables-openapi.yml): 168 POST /tools/{name} operations
+- [MCP manifest](https://raw.githubusercontent.com/api-evangelist/https-mcp-cables-live-openapi-json/refs/heads/main/mcp/cables-mcp.yml): 168 tools, remote deployment, x402 auth
+- [Tool crosswalk](https://raw.githubusercontent.com/api-evangelist/https-mcp-cables-live-openapi-json/refs/heads/main/mcp/cables-tool-crosswalk.yml): MCP tools ↔ OpenAPI operations (168:168)
+
+## Agent guidance
+- [Authentication / payment model](https://raw.githubusercontent.com/api-evangelist/https-mcp-cables-live-openapi-json/refs/heads/main/authentication/cables-authentication.yml): no credentials; x402 micropayment per call
+- [Conventions](https://raw.githubusercontent.com/api-evangelist/https-mcp-cables-live-openapi-json/refs/heads/main/conventions/cables-conventions.yml): stateless reads, no idempotency contract, read-only (reversibility n/a)
+- [Errors](https://raw.githubusercontent.com/api-evangelist/https-mcp-cables-live-openapi-json/refs/heads/main/errors/cables-problem-types.yml): 400 / 402 (x402) / 500
+- [Plans / pricing](https://raw.githubusercontent.com/api-evangelist/https-mcp-cables-live-openapi-json/refs/heads/main/plans/cables-plans-pricing.yml): $0.05 per call, no subscription
+- [Sandbox](https://raw.githubusercontent.com/api-evangelist/https-mcp-cables-live-openapi-json/refs/heads/main/sandbox/cables-sandbox.yml): Solana devnet (test-mode)
+- [Agent skills](https://raw.githubusercontent.com/api-evangelist/https-mcp-cables-live-openapi-json/refs/heads/main/skills/_index.yml): vision, NLP, forecasting, social analytics
+
+## Tools (by family)
+- Vision: analyze-image, detect-objects, detect-faces, classify-image
+- NLP: analyze-text, detect-sentiment, detect-toxicity, extract-keywords, embed-text, answer-question
+- Data: predict-trend, forecast-data, detect-anomalies, cluster-data, reduce-dimensions, regression, ab-test
+- Social (per platform, ~10 each): <platform>-comment-sentiment, predict-<platform>-views, <platform>-trend-detection, <platform>-forecast, <platform>-topic-clustering, analyze-<platform>-thumbnails

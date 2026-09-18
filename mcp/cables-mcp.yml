@@ -1,0 +1,1456 @@
+generated: '2026-09-18'
+method: searched
+status: published
+source: https://mcp.cables.live/mcp (MCP initialize + tools/list, streamable HTTP, anonymous)
+deployment:
+  mode: remote
+  endpoint: https://mcp.cables.live/mcp
+  transport: streamable-http
+  auth: none
+  verified: probed
+server:
+  name: tensorflow-social-mcp
+  version: 2.0.0
+  protocol_version: '2025-06-18'
+  capabilities:
+  - tools
+notes: Live hosted remote MCP server. initialize + tools/list are anonymous (session-based, no OAuth);
+  executing any tool requires an x402 micropayment ($0.05 USDC on Solana devnet) or the server returns
+  an HTTP 402 challenge. 168 tools mirror the 168 OpenAPI POST operations 1:1 by name. GET /health returns
+  {status:ok,tools:168,version:2.0.0}.
+tool_count: 168
+tools:
+- name: analyze-image
+  description: Classify image content
+  input:
+  - imageUrl
+  required:
+  - imageUrl
+  source_operation: openapi/cables-openapi.yml#/tools/analyze-image
+- name: detect-objects
+  description: Detect objects in image
+  input:
+  - imageUrl
+  required:
+  - imageUrl
+  source_operation: openapi/cables-openapi.yml#/tools/detect-objects
+- name: detect-faces
+  description: Detect faces in image
+  input:
+  - imageUrl
+  required:
+  - imageUrl
+  source_operation: openapi/cables-openapi.yml#/tools/detect-faces
+- name: classify-image
+  description: Classify image with custom labels
+  input:
+  - imageUrl
+  - labels
+  required:
+  - imageUrl
+  - labels
+  source_operation: openapi/cables-openapi.yml#/tools/classify-image
+- name: analyze-text
+  description: Analyze text content
+  input:
+  - text
+  required:
+  - text
+  source_operation: openapi/cables-openapi.yml#/tools/analyze-text
+- name: extract-keywords
+  description: Extract keywords from text
+  input:
+  - text
+  - numKeywords
+  required:
+  - text
+  source_operation: openapi/cables-openapi.yml#/tools/extract-keywords
+- name: detect-sentiment
+  description: Detect sentiment of text
+  input:
+  - text
+  required:
+  - text
+  source_operation: openapi/cables-openapi.yml#/tools/detect-sentiment
+- name: detect-toxicity
+  description: Detect toxic content in text
+  input:
+  - text
+  required:
+  - text
+  source_operation: openapi/cables-openapi.yml#/tools/detect-toxicity
+- name: embed-text
+  description: Generate text embeddings
+  input:
+  - text
+  required:
+  - text
+  source_operation: openapi/cables-openapi.yml#/tools/embed-text
+- name: answer-question
+  description: Answer question from context
+  input:
+  - question
+  - context
+  required:
+  - question
+  - context
+  source_operation: openapi/cables-openapi.yml#/tools/answer-question
+- name: predict-trend
+  description: Predict trend from data points
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/predict-trend
+- name: forecast-data
+  description: Forecast time series data
+  input:
+  - dataPoints
+  - periods
+  required:
+  - dataPoints
+  - periods
+  source_operation: openapi/cables-openapi.yml#/tools/forecast-data
+- name: detect-anomalies
+  description: Detect anomalies in data
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/detect-anomalies
+- name: cluster-data
+  description: Cluster data points
+  input:
+  - dataPoints
+  - k
+  required:
+  - dataPoints
+  - k
+  source_operation: openapi/cables-openapi.yml#/tools/cluster-data
+- name: reduce-dimensions
+  description: Reduce dimensions of data
+  input:
+  - dataPoints
+  - dimensions
+  required:
+  - dataPoints
+  - dimensions
+  source_operation: openapi/cables-openapi.yml#/tools/reduce-dimensions
+- name: regression
+  description: Perform regression on data
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/regression
+- name: train-model
+  description: Train a model on data
+  input:
+  - features
+  - labels
+  - epochs
+  required:
+  - features
+  - labels
+  - epochs
+  source_operation: openapi/cables-openapi.yml#/tools/train-model
+- name: ab-test
+  description: Run A/B test analysis
+  input:
+  - groupA
+  - groupB
+  required:
+  - groupA
+  - groupB
+  source_operation: openapi/cables-openapi.yml#/tools/ab-test
+- name: analyze-youtube-thumbnails
+  description: Analyze YouTube thumbnails
+  input:
+  - imageUrls
+  required:
+  - imageUrls
+  source_operation: openapi/cables-openapi.yml#/tools/analyze-youtube-thumbnails
+- name: classify-youtube-content
+  description: Classify YouTube video content
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/classify-youtube-content
+- name: predict-youtube-views
+  description: Predict YouTube video views
+  input:
+  - titleLen
+  - descLen
+  - hasNumbers
+  - hasEmoji
+  - wordCount
+  - likes
+  - comments
+  required:
+  - titleLen
+  - descLen
+  - hasNumbers
+  - hasEmoji
+  - wordCount
+  - likes
+  - comments
+  source_operation: openapi/cables-openapi.yml#/tools/predict-youtube-views
+- name: youtube-comment-sentiment
+  description: Analyze YouTube comment sentiment
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/youtube-comment-sentiment
+- name: youtube-channel-keywords
+  description: Extract YouTube channel keywords
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/youtube-channel-keywords
+- name: youtube-trend-detection
+  description: Detect YouTube trends
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/youtube-trend-detection
+- name: youtube-forecast
+  description: Forecast YouTube growth
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/youtube-forecast
+- name: youtube-anomaly-detection
+  description: Detect YouTube view anomalies
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/youtube-anomaly-detection
+- name: youtube-thumbnail-comparison
+  description: Compare two YouTube thumbnails
+  input:
+  - imageUrl1
+  - imageUrl2
+  required:
+  - imageUrl1
+  - imageUrl2
+  source_operation: openapi/cables-openapi.yml#/tools/youtube-thumbnail-comparison
+- name: youtube-topic-clustering
+  description: Cluster YouTube topics
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/youtube-topic-clustering
+- name: analyze-instagram-images
+  description: Analyze Instagram post images
+  input:
+  - imageUrls
+  required:
+  - imageUrls
+  source_operation: openapi/cables-openapi.yml#/tools/analyze-instagram-images
+- name: predict-instagram-engagement
+  description: Predict Instagram post engagement
+  input:
+  - captionLen
+  - hashtagCount
+  - emojiCount
+  - likes
+  - comments
+  - shares
+  required:
+  - captionLen
+  - hashtagCount
+  - emojiCount
+  - likes
+  - comments
+  - shares
+  source_operation: openapi/cables-openapi.yml#/tools/predict-instagram-engagement
+- name: classify-instagram-content
+  description: Classify Instagram post content
+  input:
+  - text
+  required:
+  - text
+  source_operation: openapi/cables-openapi.yml#/tools/classify-instagram-content
+- name: instagram-caption-sentiment
+  description: Analyze Instagram caption sentiment
+  input:
+  - text
+  required:
+  - text
+  source_operation: openapi/cables-openapi.yml#/tools/instagram-caption-sentiment
+- name: instagram-hashtag-extraction
+  description: Extract Instagram hashtags
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/instagram-hashtag-extraction
+- name: instagram-visual-trends
+  description: Detect Instagram visual trends
+  input:
+  - imageUrls
+  required:
+  - imageUrls
+  source_operation: openapi/cables-openapi.yml#/tools/instagram-visual-trends
+- name: instagram-follower-forecast
+  description: Forecast Instagram follower growth
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/instagram-follower-forecast
+- name: instagram-anomaly-detection
+  description: Detect Instagram engagement anomalies
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/instagram-anomaly-detection
+- name: instagram-post-comparison
+  description: Compare two Instagram posts
+  input:
+  - imageUrl1
+  - imageUrl2
+  required:
+  - imageUrl1
+  - imageUrl2
+  source_operation: openapi/cables-openapi.yml#/tools/instagram-post-comparison
+- name: instagram-content-clustering
+  description: Cluster Instagram content themes
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/instagram-content-clustering
+- name: analyze-tiktok-thumbnails
+  description: Analyze TikTok video thumbnails
+  input:
+  - imageUrls
+  required:
+  - imageUrls
+  source_operation: openapi/cables-openapi.yml#/tools/analyze-tiktok-thumbnails
+- name: predict-tiktok-virality
+  description: Predict TikTok video virality
+  input:
+  - titleLen
+  - descLen
+  - duration
+  - hashtagCount
+  - emojiCount
+  - views
+  - likes
+  - comments
+  - shares
+  required:
+  - titleLen
+  - descLen
+  - duration
+  - hashtagCount
+  - emojiCount
+  - views
+  - likes
+  - comments
+  - shares
+  source_operation: openapi/cables-openapi.yml#/tools/predict-tiktok-virality
+- name: classify-tiktok-content
+  description: Classify TikTok video content
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/classify-tiktok-content
+- name: tiktok-content-sentiment
+  description: Analyze TikTok content sentiment
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/tiktok-content-sentiment
+- name: tiktok-trending-topics
+  description: Extract TikTok trending topics
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/tiktok-trending-topics
+- name: tiktok-view-patterns
+  description: Detect TikTok view patterns
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/tiktok-view-patterns
+- name: tiktok-follower-forecast
+  description: Forecast TikTok follower growth
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/tiktok-follower-forecast
+- name: tiktok-anomaly-detection
+  description: Detect TikTok engagement anomalies
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/tiktok-anomaly-detection
+- name: tiktok-thumbnail-comparison
+  description: Compare two TikTok thumbnails
+  input:
+  - imageUrl1
+  - imageUrl2
+  required:
+  - imageUrl1
+  - imageUrl2
+  source_operation: openapi/cables-openapi.yml#/tools/tiktok-thumbnail-comparison
+- name: tiktok-content-clustering
+  description: Cluster TikTok video content
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/tiktok-content-clustering
+- name: twitter-content-keywords
+  description: Analyze tweet content keywords
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/twitter-content-keywords
+- name: predict-twitter-engagement
+  description: Predict tweet engagement
+  input:
+  - textLen
+  - hashtagCount
+  - mentionCount
+  - linkCount
+  - questionCount
+  - exclamationCount
+  - likes
+  - retweets
+  - replies
+  required:
+  - textLen
+  - hashtagCount
+  - mentionCount
+  - linkCount
+  - questionCount
+  - exclamationCount
+  - likes
+  - retweets
+  - replies
+  source_operation: openapi/cables-openapi.yml#/tools/predict-twitter-engagement
+- name: classify-twitter-topics
+  description: Classify tweet topics
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/classify-twitter-topics
+- name: twitter-toxicity-detection
+  description: Detect tweet toxicity
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/twitter-toxicity-detection
+- name: twitter-sentiment-analysis
+  description: Analyze tweet sentiment
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/twitter-sentiment-analysis
+- name: twitter-keyword-extraction
+  description: Extract tweet keywords
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/twitter-keyword-extraction
+- name: twitter-follower-forecast
+  description: Forecast Twitter follower growth
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/twitter-follower-forecast
+- name: twitter-anomaly-detection
+  description: Detect Twitter engagement anomalies
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/twitter-anomaly-detection
+- name: twitter-tweet-comparison
+  description: Compare two tweets
+  input:
+  - text1
+  - text2
+  required:
+  - text1
+  - text2
+  source_operation: openapi/cables-openapi.yml#/tools/twitter-tweet-comparison
+- name: twitter-topic-clustering
+  description: Cluster tweet topics
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/twitter-topic-clustering
+- name: analyze-facebook-content
+  description: Analyze Facebook post content
+  input:
+  - message
+  - imageUrl
+  required:
+  - message
+  source_operation: openapi/cables-openapi.yml#/tools/analyze-facebook-content
+- name: predict-facebook-engagement
+  description: Predict Facebook post engagement
+  input:
+  - messageLen
+  - hashtagCount
+  - emojiCount
+  - linkCount
+  - wordCount
+  - impressions
+  required:
+  - messageLen
+  - hashtagCount
+  - emojiCount
+  - linkCount
+  - wordCount
+  - impressions
+  source_operation: openapi/cables-openapi.yml#/tools/predict-facebook-engagement
+- name: classify-facebook-topics
+  description: Classify Facebook post topics
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/classify-facebook-topics
+- name: facebook-comment-sentiment
+  description: Analyze Facebook comment sentiment
+  input:
+  - text
+  required:
+  - text
+  source_operation: openapi/cables-openapi.yml#/tools/facebook-comment-sentiment
+- name: facebook-post-keywords
+  description: Extract Facebook post keywords
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/facebook-post-keywords
+- name: facebook-posting-trends
+  description: Detect Facebook posting trends
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/facebook-posting-trends
+- name: facebook-growth-forecast
+  description: Forecast Facebook page growth
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/facebook-growth-forecast
+- name: facebook-anomaly-detection
+  description: Detect Facebook engagement anomalies
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/facebook-anomaly-detection
+- name: facebook-visual-comparison
+  description: Compare two Facebook post visuals
+  input:
+  - imageUrl1
+  - imageUrl2
+  required:
+  - imageUrl1
+  - imageUrl2
+  source_operation: openapi/cables-openapi.yml#/tools/facebook-visual-comparison
+- name: facebook-content-clustering
+  description: Cluster Facebook post content
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/facebook-content-clustering
+- name: discord-sentiment-analysis
+  description: Analyze Discord message sentiment
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/discord-sentiment-analysis
+- name: discord-toxicity-detection
+  description: Detect Discord toxicity
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/discord-toxicity-detection
+- name: predict-discord-engagement
+  description: Predict Discord engagement
+  input:
+  - messageLen
+  - emojiCount
+  - mentionCount
+  - reactionCount
+  - replyCount
+  required:
+  - messageLen
+  - emojiCount
+  - mentionCount
+  - reactionCount
+  - replyCount
+  source_operation: openapi/cables-openapi.yml#/tools/predict-discord-engagement
+- name: classify-discord-topics
+  description: Classify Discord topics
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/classify-discord-topics
+- name: discord-keyword-extraction
+  description: Extract Discord keywords
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/discord-keyword-extraction
+- name: discord-activity-patterns
+  description: Detect Discord activity patterns
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/discord-activity-patterns
+- name: discord-growth-forecast
+  description: Forecast Discord growth
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/discord-growth-forecast
+- name: discord-anomaly-detection
+  description: Detect Discord anomalies
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/discord-anomaly-detection
+- name: discord-channel-comparison
+  description: Compare two Discord channels
+  input:
+  - texts1
+  - texts2
+  required:
+  - texts1
+  - texts2
+  source_operation: openapi/cables-openapi.yml#/tools/discord-channel-comparison
+- name: discord-member-clustering
+  description: Cluster Discord members
+  input:
+  - data
+  required:
+  - data
+  source_operation: openapi/cables-openapi.yml#/tools/discord-member-clustering
+- name: analyze-twitch-content
+  description: Analyze Twitch stream content
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/analyze-twitch-content
+- name: predict-twitch-viewers
+  description: Predict Twitch viewer count
+  input:
+  - titleLen
+  - gamePopularity
+  - durationMinutes
+  - followerCount
+  required:
+  - titleLen
+  - gamePopularity
+  - durationMinutes
+  - followerCount
+  source_operation: openapi/cables-openapi.yml#/tools/predict-twitch-viewers
+- name: classify-twitch-games
+  description: Classify Twitch game content
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/classify-twitch-games
+- name: twitch-chat-sentiment
+  description: Analyze Twitch chat sentiment
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/twitch-chat-sentiment
+- name: twitch-keyword-extraction
+  description: Extract Twitch keywords
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/twitch-keyword-extraction
+- name: twitch-viewer-trends
+  description: Detect Twitch viewer trends
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/twitch-viewer-trends
+- name: twitch-growth-forecast
+  description: Forecast Twitch growth
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/twitch-growth-forecast
+- name: twitch-anomaly-detection
+  description: Detect Twitch anomalies
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/twitch-anomaly-detection
+- name: twitch-clip-comparison
+  description: Compare two Twitch clips
+  input:
+  - text1
+  - text2
+  required:
+  - text1
+  - text2
+  source_operation: openapi/cables-openapi.yml#/tools/twitch-clip-comparison
+- name: twitch-stream-clustering
+  description: Cluster Twitch streams
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/twitch-stream-clustering
+- name: reddit-sentiment-analysis
+  description: Analyze Reddit post sentiment
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/reddit-sentiment-analysis
+- name: reddit-toxicity-detection
+  description: Detect Reddit toxicity
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/reddit-toxicity-detection
+- name: predict-reddit-engagement
+  description: Predict Reddit engagement
+  input:
+  - titleLen
+  - bodyLen
+  - upvoteRatio
+  - commentCount
+  - awards
+  required:
+  - titleLen
+  - bodyLen
+  - upvoteRatio
+  - commentCount
+  - awards
+  source_operation: openapi/cables-openapi.yml#/tools/predict-reddit-engagement
+- name: classify-reddit-topics
+  description: Classify Reddit topics
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/classify-reddit-topics
+- name: reddit-keyword-extraction
+  description: Extract Reddit keywords
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/reddit-keyword-extraction
+- name: reddit-trend-detection
+  description: Detect Reddit trends
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/reddit-trend-detection
+- name: reddit-growth-forecast
+  description: Forecast Reddit growth
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/reddit-growth-forecast
+- name: reddit-anomaly-detection
+  description: Detect Reddit anomalies
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/reddit-anomaly-detection
+- name: reddit-post-comparison
+  description: Compare two Reddit posts
+  input:
+  - text1
+  - text2
+  required:
+  - text1
+  - text2
+  source_operation: openapi/cables-openapi.yml#/tools/reddit-post-comparison
+- name: reddit-community-clustering
+  description: Cluster Reddit community
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/reddit-community-clustering
+- name: linkedin-sentiment-analysis
+  description: Analyze LinkedIn post sentiment
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/linkedin-sentiment-analysis
+- name: predict-linkedin-engagement
+  description: Predict LinkedIn engagement
+  input:
+  - textLen
+  - hashtagCount
+  - linkCount
+  - imageCount
+  - commentCount
+  - likeCount
+  required:
+  - textLen
+  - hashtagCount
+  - linkCount
+  - imageCount
+  - commentCount
+  - likeCount
+  source_operation: openapi/cables-openapi.yml#/tools/predict-linkedin-engagement
+- name: classify-linkedin-topics
+  description: Classify LinkedIn topics
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/classify-linkedin-topics
+- name: linkedin-keyword-extraction
+  description: Extract LinkedIn keywords
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/linkedin-keyword-extraction
+- name: linkedin-trend-detection
+  description: Detect LinkedIn trends
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/linkedin-trend-detection
+- name: linkedin-growth-forecast
+  description: Forecast LinkedIn growth
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/linkedin-growth-forecast
+- name: linkedin-anomaly-detection
+  description: Detect LinkedIn anomalies
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/linkedin-anomaly-detection
+- name: linkedin-post-comparison
+  description: Compare two LinkedIn posts
+  input:
+  - text1
+  - text2
+  required:
+  - text1
+  - text2
+  source_operation: openapi/cables-openapi.yml#/tools/linkedin-post-comparison
+- name: linkedin-content-clustering
+  description: Cluster LinkedIn content
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/linkedin-content-clustering
+- name: linkedin-audience-segmentation
+  description: Segment LinkedIn audience
+  input:
+  - data
+  required:
+  - data
+  source_operation: openapi/cables-openapi.yml#/tools/linkedin-audience-segmentation
+- name: threads-sentiment-analysis
+  description: Analyze Threads post sentiment
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/threads-sentiment-analysis
+- name: threads-toxicity-detection
+  description: Detect Threads toxicity
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/threads-toxicity-detection
+- name: predict-threads-engagement
+  description: Predict Threads engagement
+  input:
+  - textLen
+  - emojiCount
+  - likeCount
+  - replyCount
+  required:
+  - textLen
+  - emojiCount
+  - likeCount
+  - replyCount
+  source_operation: openapi/cables-openapi.yml#/tools/predict-threads-engagement
+- name: classify-threads-topics
+  description: Classify Threads topics
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/classify-threads-topics
+- name: threads-keyword-extraction
+  description: Extract Threads keywords
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/threads-keyword-extraction
+- name: threads-trend-detection
+  description: Detect Threads trends
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/threads-trend-detection
+- name: threads-growth-forecast
+  description: Forecast Threads growth
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/threads-growth-forecast
+- name: threads-anomaly-detection
+  description: Detect Threads anomalies
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/threads-anomaly-detection
+- name: threads-post-comparison
+  description: Compare two Threads posts
+  input:
+  - text1
+  - text2
+  required:
+  - text1
+  - text2
+  source_operation: openapi/cables-openapi.yml#/tools/threads-post-comparison
+- name: threads-content-clustering
+  description: Cluster Threads content
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/threads-content-clustering
+- name: bluesky-sentiment-analysis
+  description: Analyze Bluesky post sentiment
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/bluesky-sentiment-analysis
+- name: bluesky-toxicity-detection
+  description: Detect Bluesky toxicity
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/bluesky-toxicity-detection
+- name: predict-bluesky-engagement
+  description: Predict Bluesky engagement
+  input:
+  - textLen
+  - wordCount
+  - likeCount
+  - repostCount
+  - replyCount
+  required:
+  - textLen
+  - wordCount
+  - likeCount
+  - repostCount
+  - replyCount
+  source_operation: openapi/cables-openapi.yml#/tools/predict-bluesky-engagement
+- name: classify-bluesky-topics
+  description: Classify Bluesky topics
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/classify-bluesky-topics
+- name: bluesky-keyword-extraction
+  description: Extract Bluesky keywords
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/bluesky-keyword-extraction
+- name: bluesky-trend-detection
+  description: Detect Bluesky trends
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/bluesky-trend-detection
+- name: bluesky-growth-forecast
+  description: Forecast Bluesky growth
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/bluesky-growth-forecast
+- name: bluesky-anomaly-detection
+  description: Detect Bluesky anomalies
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/bluesky-anomaly-detection
+- name: bluesky-post-comparison
+  description: Compare two Bluesky posts
+  input:
+  - text1
+  - text2
+  required:
+  - text1
+  - text2
+  source_operation: openapi/cables-openapi.yml#/tools/bluesky-post-comparison
+- name: bluesky-content-clustering
+  description: Cluster Bluesky content
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/bluesky-content-clustering
+- name: mastodon-sentiment-analysis
+  description: Analyze Mastodon status sentiment
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/mastodon-sentiment-analysis
+- name: mastodon-toxicity-detection
+  description: Detect Mastodon toxicity
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/mastodon-toxicity-detection
+- name: predict-mastodon-engagement
+  description: Predict Mastodon engagement
+  input:
+  - textLen
+  - boostCount
+  - favouriteCount
+  - replyCount
+  required:
+  - textLen
+  - boostCount
+  - favouriteCount
+  - replyCount
+  source_operation: openapi/cables-openapi.yml#/tools/predict-mastodon-engagement
+- name: classify-mastodon-topics
+  description: Classify Mastodon topics
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/classify-mastodon-topics
+- name: mastodon-keyword-extraction
+  description: Extract Mastodon keywords
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/mastodon-keyword-extraction
+- name: mastodon-trend-detection
+  description: Detect Mastodon trends
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/mastodon-trend-detection
+- name: mastodon-growth-forecast
+  description: Forecast Mastodon growth
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/mastodon-growth-forecast
+- name: mastodon-anomaly-detection
+  description: Detect Mastodon anomalies
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/mastodon-anomaly-detection
+- name: mastodon-status-comparison
+  description: Compare two Mastodon statuses
+  input:
+  - text1
+  - text2
+  required:
+  - text1
+  - text2
+  source_operation: openapi/cables-openapi.yml#/tools/mastodon-status-comparison
+- name: mastodon-content-clustering
+  description: Cluster Mastodon content
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/mastodon-content-clustering
+- name: github-issue-sentiment
+  description: Analyze GitHub issue sentiment
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/github-issue-sentiment
+- name: classify-github-issues
+  description: Classify GitHub issue topics
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/classify-github-issues
+- name: github-keyword-extraction
+  description: Extract GitHub keywords
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/github-keyword-extraction
+- name: github-trend-detection
+  description: Detect GitHub trends
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/github-trend-detection
+- name: github-growth-forecast
+  description: Forecast GitHub growth
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/github-growth-forecast
+- name: github-anomaly-detection
+  description: Detect GitHub anomalies
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/github-anomaly-detection
+- name: github-repo-comparison
+  description: Compare two GitHub repos
+  input:
+  - texts1
+  - texts2
+  required:
+  - texts1
+  - texts2
+  source_operation: openapi/cables-openapi.yml#/tools/github-repo-comparison
+- name: github-issue-clustering
+  description: Cluster GitHub issues
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/github-issue-clustering
+- name: predict-github-issue-engagement
+  description: Predict GitHub issue engagement
+  input:
+  - titleLen
+  - bodyLen
+  - labelCount
+  - commentCount
+  required:
+  - titleLen
+  - bodyLen
+  - labelCount
+  - commentCount
+  source_operation: openapi/cables-openapi.yml#/tools/predict-github-issue-engagement
+- name: github-contributor-patterns
+  description: Analyze GitHub contributor patterns
+  input:
+  - data
+  required:
+  - data
+  source_operation: openapi/cables-openapi.yml#/tools/github-contributor-patterns
+- name: spotify-track-sentiment
+  description: Analyze Spotify track sentiment
+  input:
+  - danceability
+  - energy
+  - valence
+  - tempo
+  - loudness
+  - speechiness
+  - acousticness
+  - instrumentalness
+  - liveness
+  - durationMs
+  required:
+  - danceability
+  - energy
+  - valence
+  - tempo
+  - loudness
+  - speechiness
+  - acousticness
+  - instrumentalness
+  - liveness
+  - durationMs
+  source_operation: openapi/cables-openapi.yml#/tools/spotify-track-sentiment
+- name: spotify-genre-classification
+  description: Classify Spotify genre
+  input:
+  - danceability
+  - energy
+  - valence
+  - tempo
+  - loudness
+  - speechiness
+  - acousticness
+  - instrumentalness
+  - liveness
+  required:
+  - danceability
+  - energy
+  - valence
+  - tempo
+  - loudness
+  - speechiness
+  - acousticness
+  - instrumentalness
+  - liveness
+  source_operation: openapi/cables-openapi.yml#/tools/spotify-genre-classification
+- name: predict-spotify-popularity
+  description: Predict Spotify track popularity
+  input:
+  - danceability
+  - energy
+  - valence
+  - tempo
+  - loudness
+  - speechiness
+  - acousticness
+  - instrumentalness
+  - liveness
+  required:
+  - danceability
+  - energy
+  - valence
+  - tempo
+  - loudness
+  - speechiness
+  - acousticness
+  - instrumentalness
+  - liveness
+  source_operation: openapi/cables-openapi.yml#/tools/predict-spotify-popularity
+- name: spotify-audio-keywords
+  description: Extract Spotify audio keywords
+  input:
+  - danceability
+  - energy
+  - valence
+  - tempo
+  - loudness
+  - speechiness
+  - acousticness
+  - instrumentalness
+  - liveness
+  required:
+  - danceability
+  - energy
+  - valence
+  - tempo
+  - loudness
+  - speechiness
+  - acousticness
+  - instrumentalness
+  - liveness
+  source_operation: openapi/cables-openapi.yml#/tools/spotify-audio-keywords
+- name: spotify-trend-detection
+  description: Detect Spotify trends
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/spotify-trend-detection
+- name: spotify-growth-forecast
+  description: Forecast Spotify growth
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/spotify-growth-forecast
+- name: spotify-anomaly-detection
+  description: Detect Spotify anomalies
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/spotify-anomaly-detection
+- name: spotify-track-comparison
+  description: Compare two Spotify tracks
+  input:
+  - track1
+  - track2
+  required:
+  - track1
+  - track2
+  source_operation: openapi/cables-openapi.yml#/tools/spotify-track-comparison
+- name: spotify-playlist-clustering
+  description: Cluster Spotify playlist tracks
+  input:
+  - tracks
+  required:
+  - tracks
+  source_operation: openapi/cables-openapi.yml#/tools/spotify-playlist-clustering
+- name: spotify-audio-analysis
+  description: Analyze Spotify audio features
+  input:
+  - danceability
+  - energy
+  - valence
+  - tempo
+  - loudness
+  - speechiness
+  - acousticness
+  - instrumentalness
+  - liveness
+  required:
+  - danceability
+  - energy
+  - valence
+  - tempo
+  - loudness
+  - speechiness
+  - acousticness
+  - instrumentalness
+  - liveness
+  source_operation: openapi/cables-openapi.yml#/tools/spotify-audio-analysis
+- name: analyze-pinterest-images
+  description: Analyze Pinterest pin images
+  input:
+  - imageUrls
+  required:
+  - imageUrls
+  source_operation: openapi/cables-openapi.yml#/tools/analyze-pinterest-images
+- name: predict-pinterest-engagement
+  description: Predict Pinterest engagement
+  input:
+  - titleLen
+  - descLen
+  - linkCount
+  - boardFollowers
+  required:
+  - titleLen
+  - descLen
+  - linkCount
+  - boardFollowers
+  source_operation: openapi/cables-openapi.yml#/tools/predict-pinterest-engagement
+- name: classify-pinterest-content
+  description: Classify Pinterest content
+  input:
+  - text
+  required:
+  - text
+  source_operation: openapi/cables-openapi.yml#/tools/classify-pinterest-content
+- name: pinterest-keyword-extraction
+  description: Extract Pinterest keywords
+  input:
+  - texts
+  required:
+  - texts
+  source_operation: openapi/cables-openapi.yml#/tools/pinterest-keyword-extraction
+- name: pinterest-trend-detection
+  description: Detect Pinterest trends
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/pinterest-trend-detection
+- name: pinterest-growth-forecast
+  description: Forecast Pinterest growth
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/pinterest-growth-forecast
+- name: pinterest-anomaly-detection
+  description: Detect Pinterest anomalies
+  input:
+  - dataPoints
+  required:
+  - dataPoints
+  source_operation: openapi/cables-openapi.yml#/tools/pinterest-anomaly-detection
+- name: pinterest-pin-comparison
+  description: Compare two Pinterest pins
+  input:
+  - text1
+  - text2
+  required:
+  - text1
+  - text2
+  source_operation: openapi/cables-openapi.yml#/tools/pinterest-pin-comparison
+- name: pinterest-board-clustering
+  description: Cluster Pinterest boards
+  input:
+  - boards
+  required:
+  - boards
+  source_operation: openapi/cables-openapi.yml#/tools/pinterest-board-clustering
+- name: pinterest-audience-analysis
+  description: Analyze Pinterest audience
+  input:
+  - data
+  required:
+  - data
+  source_operation: openapi/cables-openapi.yml#/tools/pinterest-audience-analysis

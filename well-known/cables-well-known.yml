@@ -1,0 +1,36 @@
+generated: '2026-09-18'
+method: probed
+note: All /.well-known/ and discovery paths return 404 on mcp.cables.live (the only live host); apex cables.live
+  returns 502. No well-known documents served. Recorded absence — NO WellKnown/SecurityTxt pointer emitted.
+hit_count: 0
+hosts:
+- host: https://mcp.cables.live
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/apis.json
+    status: 404
+  - path: /apis.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://cables.live
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /
+    status: 502

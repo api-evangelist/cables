@@ -1,0 +1,8 @@
+generated: '2026-09-18'
+method: searched
+source: openapi/cables-openapi.yml + mcp.cables.live (no docs host published)
+limit_count: 0
+note: 'No rate limits documented. The provider publishes no docs/pricing page (apex cables.live 502);
+  the OpenAPI declares no RateLimit/X-RateLimit response headers and no 429 responses. Throttling, if
+  any, is undocumented. Economic throttling is inherent: every call costs $0.05 via x402.'
+limits: []
