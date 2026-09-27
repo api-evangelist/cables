@@ -10,13 +10,13 @@ modified: '2026-09-18'
 specificationVersion: '0.21'
 tags:
 - MCP Server
-- agent-native
+- Agent-Native
 - x402
 - pay-per-call
-- Machine-Learning
+- Machine Learning
 - tensorflow-js
 - NLP
-- Computer-Vision
+- Computer Vision
 - Social Media Analytics
 - OpenAPI
 - Solana
@@ -36,57 +36,29 @@ tags_raw:
 - solana
 - crypto-payments
 - testnet-devnet
+- Machine-Learning
+- Computer-Vision
 apis:
-- name: TensorFlow.js Social Media MCP Server
-  description: Hosted MCP resource server offering 168 ML analytics tools invoked via POST, gated by the
-    x402 payment protocol (Solana devnet USDC). Machine-readable OpenAPI 3.0.0 contract available publicly.
+- aid: cables:cables-tools-api
+  name: Cables Tools API
+  description: The Tools API from Cables — 168 operation(s) for tools.
   humanURL: https://mcp.cables.live
   baseURL: https://mcp.cables.live
   tags:
-  - MCP Server
-  - agent-native
-  - x402
-  - pay-per-call
-  - Machine-Learning
-  - tensorflow-js
-  - NLP
-  - Computer-Vision
-  - Social Media Analytics
-  - OpenAPI
-  - Solana
-  - Crypto Payments
-  - testnet-devnet
-  tags_raw:
-  - mcp-server
-  - agent-native
-  - x402
-  - pay-per-call
-  - machine-learning
-  - tensorflow-js
-  - nlp
-  - computer-vision
-  - social-media-analytics
-  - openapi
-  - solana
-  - crypto-payments
-  - testnet-devnet
+  - Tools
   properties:
   - type: OpenAPI
-    url: openapi/cables-openapi.yml
-  - type: OpenAPI
-    name: OpenAPI (provider-hosted)
-    url: https://mcp.cables.live/openapi.json
-  - type: MCPServer
-    url: mcp/cables-mcp.yml
-  - type: MCPServer
-    name: MCP endpoint (live)
-    url: https://mcp.cables.live/mcp
+    url: openapi/cables-tools-api-openapi.yml
   - type: ToolCrosswalk
     url: mcp/cables-tool-crosswalk.yml
 maintainers:
 - FN: TensorFlow.js Social Media MCP Server
   url: https://mcp.cables.live
 common:
+- type: MCPServer
+  url: mcp/cables-mcp.yml
+- type: MCPServer
+  url: https://mcp.cables.live/mcp
 - type: Website
   url: https://cables.live
 - type: Authentication
