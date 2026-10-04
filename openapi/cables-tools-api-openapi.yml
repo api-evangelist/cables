@@ -8576,43 +8576,7 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    spotify-genre-classification:
-      type: object
-      properties:
-        danceability:
-          type: number
-        energy:
-          type: number
-        valence:
-          type: number
-        tempo:
-          type: number
-        loudness:
-          type: number
-        speechiness:
-          type: number
-        acousticness:
-          type: number
-        instrumentalness:
-          type: number
-        liveness:
-          type: number
-      required:
-      - danceability
-      - energy
-      - valence
-      - tempo
-    answer-question:
-      type: object
-      properties:
-        question:
-          type: string
-        context:
-          type: string
-      required:
-      - question
-      - context
-    threads-toxicity-detection:
+    twitch-stream-clustering:
       type: object
       properties:
         texts:
@@ -8621,7 +8585,32 @@ components:
             type: string
       required:
       - texts
-    discord-growth-forecast:
+    classify-discord-topics:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    detect-objects:
+      type: object
+      properties:
+        imageUrl:
+          type: string
+      required:
+      - imageUrl
+    instagram-visual-trends:
+      type: object
+      properties:
+        imageUrls:
+          type: array
+          items:
+            type: string
+      required:
+      - imageUrls
+    facebook-posting-trends:
       type: object
       properties:
         dataPoints:
@@ -8630,7 +8619,7 @@ components:
             type: number
       required:
       - dataPoints
-    twitch-viewer-trends:
+    bluesky-anomaly-detection:
       type: object
       properties:
         dataPoints:
@@ -8639,7 +8628,32 @@ components:
             type: number
       required:
       - dataPoints
-    bluesky-sentiment-analysis:
+    detect-sentiment:
+      type: object
+      properties:
+        text:
+          type: string
+      required:
+      - text
+    threads-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    reddit-toxicity-detection:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    twitter-topic-clustering:
       type: object
       properties:
         texts:
@@ -8657,38 +8671,35 @@ components:
             type: number
       required:
       - dataPoints
-    youtube-thumbnail-comparison:
+    tiktok-trending-topics:
       type: object
       properties:
-        imageUrl1:
-          type: string
-        imageUrl2:
-          type: string
+        texts:
+          type: array
+          items:
+            type: string
       required:
-      - imageUrl1
-      - imageUrl2
-    forecast-data:
+      - texts
+    classify-reddit-topics:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    cluster-data:
       type: object
       properties:
         dataPoints:
           type: array
-          items:
-            type: number
-        periods:
+        k:
           type: number
       required:
       - dataPoints
-    reddit-post-comparison:
-      type: object
-      properties:
-        text1:
-          type: string
-        text2:
-          type: string
-      required:
-      - text1
-      - text2
-    mastodon-sentiment-analysis:
+      - k
+    reddit-keyword-extraction:
       type: object
       properties:
         texts:
@@ -8697,16 +8708,7 @@ components:
             type: string
       required:
       - texts
-    analyze-tiktok-thumbnails:
-      type: object
-      properties:
-        imageUrls:
-          type: array
-          items:
-            type: string
-      required:
-      - imageUrls
-    reddit-trend-detection:
+    twitter-follower-forecast:
       type: object
       properties:
         dataPoints:
@@ -8715,68 +8717,6 @@ components:
             type: number
       required:
       - dataPoints
-    facebook-content-clustering:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    ab-test:
-      type: object
-      properties:
-        groupA:
-          type: array
-          items:
-            type: number
-        groupB:
-          type: array
-          items:
-            type: number
-      required:
-      - groupA
-      - groupB
-    linkedin-sentiment-analysis:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    train-model:
-      type: object
-      properties:
-        features:
-          type: array
-        labels:
-          type: array
-        epochs:
-          type: number
-      required:
-      - features
-      - labels
-    mastodon-anomaly-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    tiktok-content-sentiment:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
     threads-content-clustering:
       type: object
       properties:
@@ -8786,119 +8726,6 @@ components:
             type: string
       required:
       - texts
-    tiktok-follower-forecast:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    embed-text:
-      type: object
-      properties:
-        text:
-          type: string
-      required:
-      - text
-    discord-activity-patterns:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    classify-twitter-topics:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    classify-image:
-      type: object
-      properties:
-        imageUrl:
-          type: string
-        labels:
-          type: array
-          items:
-            type: string
-      required:
-      - imageUrl
-      - labels
-    reddit-community-clustering:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    instagram-caption-sentiment:
-      type: object
-      properties:
-        text:
-          type: string
-      required:
-      - text
-    predict-tiktok-virality:
-      type: object
-      properties:
-        titleLen:
-          type: number
-        descLen:
-          type: number
-        duration:
-          type: number
-        hashtagCount:
-          type: number
-        emojiCount:
-          type: number
-        views:
-          type: number
-        likes:
-          type: number
-        comments:
-          type: number
-        shares:
-          type: number
-      required:
-      - titleLen
-      - duration
-      - views
-      - likes
-    classify-linkedin-topics:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    facebook-comment-sentiment:
-      type: object
-      properties:
-        text:
-          type: string
-      required:
-      - text
-    analyze-facebook-content:
-      type: object
-      properties:
-        message:
-          type: string
-        imageUrl:
-          type: string
-      required:
-      - message
     detect-anomalies:
       type: object
       properties:
@@ -8908,38 +8735,7 @@ components:
             type: number
       required:
       - dataPoints
-    github-issue-clustering:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    facebook-post-keywords:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    predict-mastodon-engagement:
-      type: object
-      properties:
-        textLen:
-          type: number
-        boostCount:
-          type: number
-        favouriteCount:
-          type: number
-        replyCount:
-          type: number
-      required:
-      - textLen
-    facebook-growth-forecast:
+    twitch-growth-forecast:
       type: object
       properties:
         dataPoints:
@@ -8948,7 +8744,40 @@ components:
             type: number
       required:
       - dataPoints
-    mastodon-status-comparison:
+    analyze-pinterest-images:
+      type: object
+      properties:
+        imageUrls:
+          type: array
+          items:
+            type: string
+      required:
+      - imageUrls
+    pinterest-audience-analysis:
+      type: object
+      properties:
+        ageRange:
+          type: string
+        gender:
+          type: string
+        location:
+          type: string
+        interests:
+          type: array
+          items:
+            type: string
+      required:
+      - ageRange
+    github-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    twitch-clip-comparison:
       type: object
       properties:
         text1:
@@ -8967,202 +8796,6 @@ components:
             type: number
       required:
       - dataPoints
-    analyze-youtube-thumbnails:
-      type: object
-      properties:
-        imageUrls:
-          type: array
-          items:
-            type: string
-      required:
-      - imageUrls
-    twitter-topic-clustering:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    mastodon-trend-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    classify-bluesky-topics:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    instagram-content-clustering:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    predict-pinterest-engagement:
-      type: object
-      properties:
-        titleLen:
-          type: number
-        descLen:
-          type: number
-        linkCount:
-          type: number
-        boardFollowers:
-          type: number
-      required:
-      - titleLen
-    analyze-text:
-      type: object
-      properties:
-        text:
-          type: string
-      required:
-      - text
-    facebook-posting-trends:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    linkedin-post-comparison:
-      type: object
-      properties:
-        text1:
-          type: string
-        text2:
-          type: string
-      required:
-      - text1
-      - text2
-    mastodon-content-clustering:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    classify-mastodon-topics:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    twitch-keyword-extraction:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    spotify-playlist-clustering:
-      type: object
-      properties:
-        tracks:
-          type: array
-          items:
-            type: object
-      required:
-      - tracks
-    youtube-forecast:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    spotify-audio-keywords:
-      type: object
-      properties:
-        danceability:
-          type: number
-        energy:
-          type: number
-        valence:
-          type: number
-        tempo:
-          type: number
-        loudness:
-          type: number
-        speechiness:
-          type: number
-        acousticness:
-          type: number
-        instrumentalness:
-          type: number
-        liveness:
-          type: number
-      required:
-      - danceability
-      - energy
-      - valence
-      - tempo
-    twitter-follower-forecast:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    classify-instagram-content:
-      type: object
-      properties:
-        text:
-          type: string
-      required:
-      - text
-    bluesky-toxicity-detection:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    detect-objects:
-      type: object
-      properties:
-        imageUrl:
-          type: string
-      required:
-      - imageUrl
-    spotify-growth-forecast:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
     discord-anomaly-detection:
       type: object
       properties:
@@ -9172,838 +8805,19 @@ components:
             type: number
       required:
       - dataPoints
-    detect-sentiment:
+    train-model:
       type: object
       properties:
-        text:
-          type: string
-      required:
-      - text
-    twitch-chat-sentiment:
-      type: object
-      properties:
-        texts:
+        features:
           type: array
-          items:
-            type: string
-      required:
-      - texts
-    mastodon-keyword-extraction:
-      type: object
-      properties:
-        texts:
+        labels:
           type: array
-          items:
-            type: string
-      required:
-      - texts
-    pinterest-trend-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    spotify-trend-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    twitch-anomaly-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    instagram-anomaly-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    twitter-content-keywords:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    youtube-channel-keywords:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    bluesky-trend-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    ErrorResponse:
-      type: object
-      properties:
-        error:
-          type: string
-        code:
-          type: string
-      required:
-      - error
-    pinterest-keyword-extraction:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    tiktok-trending-topics:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    threads-keyword-extraction:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    pinterest-board-clustering:
-      type: object
-      properties:
-        boards:
-          type: array
-          items:
-            type: object
-      required:
-      - boards
-    discord-keyword-extraction:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    extract-keywords:
-      type: object
-      properties:
-        text:
-          type: string
-        numKeywords:
+        epochs:
           type: number
       required:
-      - text
-    detect-toxicity:
-      type: object
-      properties:
-        text:
-          type: string
-      required:
-      - text
-    mastodon-toxicity-detection:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    reduce-dimensions:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-        dimensions:
-          type: number
-      required:
-      - dataPoints
-      - dimensions
-    spotify-anomaly-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    threads-growth-forecast:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    pinterest-anomaly-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    predict-github-issue-engagement:
-      type: object
-      properties:
-        titleLen:
-          type: number
-        bodyLen:
-          type: number
-        labelCount:
-          type: number
-        commentCount:
-          type: number
-      required:
-      - titleLen
-      - bodyLen
-    instagram-follower-forecast:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    regression:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-      required:
-      - dataPoints
-    twitch-clip-comparison:
-      type: object
-      properties:
-        text1:
-          type: string
-        text2:
-          type: string
-      required:
-      - text1
-      - text2
-    classify-youtube-content:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    linkedin-content-clustering:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    classify-pinterest-content:
-      type: object
-      properties:
-        text:
-          type: string
-      required:
-      - text
-    youtube-topic-clustering:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    twitch-growth-forecast:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    bluesky-anomaly-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    linkedin-anomaly-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    youtube-anomaly-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    github-repo-comparison:
-      type: object
-      properties:
-        texts1:
-          type: array
-          items:
-            type: string
-        texts2:
-          type: array
-          items:
-            type: string
-      required:
-      - texts1
-      - texts2
-    pinterest-pin-comparison:
-      type: object
-      properties:
-        text1:
-          type: string
-        text2:
-          type: string
-      required:
-      - text1
-      - text2
-    youtube-trend-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    twitter-sentiment-analysis:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    twitter-toxicity-detection:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    detect-faces:
-      type: object
-      properties:
-        imageUrl:
-          type: string
-      required:
-      - imageUrl
-    tiktok-content-clustering:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    pinterest-growth-forecast:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    facebook-visual-comparison:
-      type: object
-      properties:
-        imageUrl1:
-          type: string
-        imageUrl2:
-          type: string
-      required:
-      - imageUrl1
-      - imageUrl2
-    predict-threads-engagement:
-      type: object
-      properties:
-        textLen:
-          type: number
-        emojiCount:
-          type: number
-        likeCount:
-          type: number
-        replyCount:
-          type: number
-      required:
-      - textLen
-    github-keyword-extraction:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    discord-toxicity-detection:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    instagram-post-comparison:
-      type: object
-      properties:
-        imageUrl1:
-          type: string
-        imageUrl2:
-          type: string
-      required:
-      - imageUrl1
-      - imageUrl2
-    twitch-stream-clustering:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    spotify-track-sentiment:
-      type: object
-      properties:
-        danceability:
-          type: number
-        energy:
-          type: number
-        valence:
-          type: number
-        tempo:
-          type: number
-        loudness:
-          type: number
-        speechiness:
-          type: number
-        acousticness:
-          type: number
-        instrumentalness:
-          type: number
-        liveness:
-          type: number
-        durationMs:
-          type: number
-      required:
-      - danceability
-      - energy
-      - valence
-      - tempo
-    tiktok-thumbnail-comparison:
-      type: object
-      properties:
-        imageUrl1:
-          type: string
-        imageUrl2:
-          type: string
-      required:
-      - imageUrl1
-      - imageUrl2
-    discord-sentiment-analysis:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    predict-bluesky-engagement:
-      type: object
-      properties:
-        textLen:
-          type: number
-        wordCount:
-          type: number
-        likeCount:
-          type: number
-        repostCount:
-          type: number
-        replyCount:
-          type: number
-      required:
-      - textLen
-    bluesky-content-clustering:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    discord-member-clustering:
-      type: object
-      properties:
-        messageCount:
-          type: number
-        reactionCount:
-          type: number
-        activeDays:
-          type: number
-      required:
-      - messageCount
-      - reactionCount
-      - activeDays
-    mastodon-growth-forecast:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    predict-reddit-engagement:
-      type: object
-      properties:
-        titleLen:
-          type: number
-        bodyLen:
-          type: number
-        upvoteRatio:
-          type: number
-        commentCount:
-          type: number
-        awards:
-          type: number
-      required:
-      - titleLen
-      - bodyLen
-    bluesky-post-comparison:
-      type: object
-      properties:
-        text1:
-          type: string
-        text2:
-          type: string
-      required:
-      - text1
-      - text2
-    threads-sentiment-analysis:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    twitter-anomaly-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
+      - features
+      - labels
     instagram-hashtag-extraction:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    SentimentResponse:
-      type: object
-      properties:
-        score:
-          type: number
-        sentiment:
-          type: string
-      required:
-      - score
-      - sentiment
-    pinterest-audience-analysis:
-      type: object
-      properties:
-        ageRange:
-          type: string
-        gender:
-          type: string
-        location:
-          type: string
-        interests:
-          type: array
-          items:
-            type: string
-      required:
-      - ageRange
-    predict-trend:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    twitter-keyword-extraction:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    discord-channel-comparison:
-      type: object
-      properties:
-        texts1:
-          type: array
-          items:
-            type: string
-        texts2:
-          type: array
-          items:
-            type: string
-      required:
-      - texts1
-      - texts2
-    github-trend-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    tiktok-view-patterns:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    reddit-growth-forecast:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    threads-anomaly-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    predict-youtube-views:
-      type: object
-      properties:
-        titleLen:
-          type: number
-        descLen:
-          type: number
-        hasNumbers:
-          type: boolean
-        hasEmoji:
-          type: boolean
-        wordCount:
-          type: number
-        likes:
-          type: number
-        comments:
-          type: number
-      required:
-      - titleLen
-      - descLen
-      - wordCount
-      - likes
-      - comments
-    spotify-audio-analysis:
-      type: object
-      properties:
-        danceability:
-          type: number
-        energy:
-          type: number
-        valence:
-          type: number
-        tempo:
-          type: number
-        loudness:
-          type: number
-        speechiness:
-          type: number
-        acousticness:
-          type: number
-        instrumentalness:
-          type: number
-        liveness:
-          type: number
-      required:
-      - danceability
-      - energy
-      - valence
-      - tempo
-    github-contributor-patterns:
-      type: object
-      properties:
-        commits:
-          type: number
-        additions:
-          type: number
-        deletions:
-          type: number
-        activeDays:
-          type: number
-      required:
-      - commits
-      - activeDays
-    classify-discord-topics:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    predict-twitter-engagement:
-      type: object
-      properties:
-        textLen:
-          type: number
-        hashtagCount:
-          type: number
-        mentionCount:
-          type: number
-        linkCount:
-          type: number
-        questionCount:
-          type: number
-        exclamationCount:
-          type: number
-        likes:
-          type: number
-        retweets:
-          type: number
-        replies:
-          type: number
-      required:
-      - textLen
-      - likes
-      - retweets
-    classify-reddit-topics:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    facebook-anomaly-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    predict-facebook-engagement:
-      type: object
-      properties:
-        messageLen:
-          type: number
-        hashtagCount:
-          type: number
-        emojiCount:
-          type: number
-        linkCount:
-          type: number
-        wordCount:
-          type: number
-        impressions:
-          type: number
-      required:
-      - messageLen
-      - wordCount
-    tiktok-anomaly-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
-    classify-threads-topics:
       type: object
       properties:
         texts:
@@ -10032,7 +8846,661 @@ components:
       - hashtagCount
       - likes
       - comments
-    github-issue-sentiment:
+    github-trend-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    github-repo-comparison:
+      type: object
+      properties:
+        texts1:
+          type: array
+          items:
+            type: string
+        texts2:
+          type: array
+          items:
+            type: string
+      required:
+      - texts1
+      - texts2
+    instagram-post-comparison:
+      type: object
+      properties:
+        imageUrl1:
+          type: string
+        imageUrl2:
+          type: string
+      required:
+      - imageUrl1
+      - imageUrl2
+    classify-tiktok-content:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    reddit-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    discord-sentiment-analysis:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    pinterest-trend-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    reddit-sentiment-analysis:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    tiktok-content-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    threads-trend-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    mastodon-sentiment-analysis:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    predict-threads-engagement:
+      type: object
+      properties:
+        textLen:
+          type: number
+        emojiCount:
+          type: number
+        likeCount:
+          type: number
+        replyCount:
+          type: number
+      required:
+      - textLen
+    twitter-sentiment-analysis:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+        code:
+          type: string
+      required:
+      - error
+    bluesky-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    reddit-trend-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    reduce-dimensions:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+        dimensions:
+          type: number
+      required:
+      - dataPoints
+      - dimensions
+    analyze-tiktok-thumbnails:
+      type: object
+      properties:
+        imageUrls:
+          type: array
+          items:
+            type: string
+      required:
+      - imageUrls
+    forecast-data:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+        periods:
+          type: number
+      required:
+      - dataPoints
+    classify-facebook-topics:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    pinterest-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    youtube-channel-keywords:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    predict-reddit-engagement:
+      type: object
+      properties:
+        titleLen:
+          type: number
+        bodyLen:
+          type: number
+        upvoteRatio:
+          type: number
+        commentCount:
+          type: number
+        awards:
+          type: number
+      required:
+      - titleLen
+      - bodyLen
+    embed-text:
+      type: object
+      properties:
+        text:
+          type: string
+      required:
+      - text
+    youtube-trend-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    extract-keywords:
+      type: object
+      properties:
+        text:
+          type: string
+        numKeywords:
+          type: number
+      required:
+      - text
+    spotify-audio-analysis:
+      type: object
+      properties:
+        danceability:
+          type: number
+        energy:
+          type: number
+        valence:
+          type: number
+        tempo:
+          type: number
+        loudness:
+          type: number
+        speechiness:
+          type: number
+        acousticness:
+          type: number
+        instrumentalness:
+          type: number
+        liveness:
+          type: number
+      required:
+      - danceability
+      - energy
+      - valence
+      - tempo
+    tiktok-view-patterns:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    answer-question:
+      type: object
+      properties:
+        question:
+          type: string
+        context:
+          type: string
+      required:
+      - question
+      - context
+    facebook-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    predict-bluesky-engagement:
+      type: object
+      properties:
+        textLen:
+          type: number
+        wordCount:
+          type: number
+        likeCount:
+          type: number
+        repostCount:
+          type: number
+        replyCount:
+          type: number
+      required:
+      - textLen
+    pinterest-board-clustering:
+      type: object
+      properties:
+        boards:
+          type: array
+          items:
+            type: object
+      required:
+      - boards
+    threads-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    github-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    predict-facebook-engagement:
+      type: object
+      properties:
+        messageLen:
+          type: number
+        hashtagCount:
+          type: number
+        emojiCount:
+          type: number
+        linkCount:
+          type: number
+        wordCount:
+          type: number
+        impressions:
+          type: number
+      required:
+      - messageLen
+      - wordCount
+    spotify-trend-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    pinterest-pin-comparison:
+      type: object
+      properties:
+        text1:
+          type: string
+        text2:
+          type: string
+      required:
+      - text1
+      - text2
+    discord-activity-patterns:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    pinterest-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    classify-mastodon-topics:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    mastodon-content-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    reddit-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    spotify-genre-classification:
+      type: object
+      properties:
+        danceability:
+          type: number
+        energy:
+          type: number
+        valence:
+          type: number
+        tempo:
+          type: number
+        loudness:
+          type: number
+        speechiness:
+          type: number
+        acousticness:
+          type: number
+        instrumentalness:
+          type: number
+        liveness:
+          type: number
+      required:
+      - danceability
+      - energy
+      - valence
+      - tempo
+    detect-toxicity:
+      type: object
+      properties:
+        text:
+          type: string
+      required:
+      - text
+    linkedin-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    classify-youtube-content:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    twitter-content-keywords:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    reddit-community-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    discord-member-clustering:
+      type: object
+      properties:
+        messageCount:
+          type: number
+        reactionCount:
+          type: number
+        activeDays:
+          type: number
+      required:
+      - messageCount
+      - reactionCount
+      - activeDays
+    github-issue-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    tiktok-thumbnail-comparison:
+      type: object
+      properties:
+        imageUrl1:
+          type: string
+        imageUrl2:
+          type: string
+      required:
+      - imageUrl1
+      - imageUrl2
+    classify-github-issues:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    reddit-post-comparison:
+      type: object
+      properties:
+        text1:
+          type: string
+        text2:
+          type: string
+      required:
+      - text1
+      - text2
+    predict-discord-engagement:
+      type: object
+      properties:
+        messageLen:
+          type: number
+        emojiCount:
+          type: number
+        mentionCount:
+          type: number
+        reactionCount:
+          type: number
+        replyCount:
+          type: number
+      required:
+      - messageLen
+    youtube-thumbnail-comparison:
+      type: object
+      properties:
+        imageUrl1:
+          type: string
+        imageUrl2:
+          type: string
+      required:
+      - imageUrl1
+      - imageUrl2
+    classify-pinterest-content:
+      type: object
+      properties:
+        text:
+          type: string
+      required:
+      - text
+    spotify-track-sentiment:
+      type: object
+      properties:
+        danceability:
+          type: number
+        energy:
+          type: number
+        valence:
+          type: number
+        tempo:
+          type: number
+        loudness:
+          type: number
+        speechiness:
+          type: number
+        acousticness:
+          type: number
+        instrumentalness:
+          type: number
+        liveness:
+          type: number
+        durationMs:
+          type: number
+      required:
+      - danceability
+      - energy
+      - valence
+      - tempo
+    mastodon-status-comparison:
+      type: object
+      properties:
+        text1:
+          type: string
+        text2:
+          type: string
+      required:
+      - text1
+      - text2
+    threads-toxicity-detection:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    bluesky-content-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    instagram-caption-sentiment:
+      type: object
+      properties:
+        text:
+          type: string
+      required:
+      - text
+    classify-twitch-games:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    tiktok-content-sentiment:
       type: object
       properties:
         texts:
@@ -10051,16 +9519,21 @@ components:
       required:
       - text1
       - text2
-    analyze-pinterest-images:
+    github-contributor-patterns:
       type: object
       properties:
-        imageUrls:
-          type: array
-          items:
-            type: string
+        commits:
+          type: number
+        additions:
+          type: number
+        deletions:
+          type: number
+        activeDays:
+          type: number
       required:
-      - imageUrls
-    bluesky-growth-forecast:
+      - commits
+      - activeDays
+    youtube-forecast:
       type: object
       properties:
         dataPoints:
@@ -10069,65 +9542,30 @@ components:
             type: number
       required:
       - dataPoints
-    classify-tiktok-content:
+    spotify-playlist-clustering:
       type: object
       properties:
-        texts:
+        tracks:
           type: array
           items:
-            type: string
+            type: object
       required:
-      - texts
-    reddit-keyword-extraction:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    analyze-instagram-images:
-      type: object
-      properties:
-        imageUrls:
-          type: array
-          items:
-            type: string
-      required:
-      - imageUrls
-    predict-twitch-viewers:
+      - tracks
+    predict-github-issue-engagement:
       type: object
       properties:
         titleLen:
           type: number
-        gamePopularity:
+        bodyLen:
           type: number
-        durationMinutes:
-          type: number
-        followerCount:
-          type: number
-      required:
-      - titleLen
-      - durationMinutes
-    predict-linkedin-engagement:
-      type: object
-      properties:
-        textLen:
-          type: number
-        hashtagCount:
-          type: number
-        linkCount:
-          type: number
-        imageCount:
+        labelCount:
           type: number
         commentCount:
           type: number
-        likeCount:
-          type: number
       required:
-      - textLen
-    classify-github-issues:
+      - titleLen
+      - bodyLen
+    analyze-twitch-content:
       type: object
       properties:
         texts:
@@ -10136,33 +9574,6 @@ components:
             type: string
       required:
       - texts
-    bluesky-keyword-extraction:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    reddit-sentiment-analysis:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    threads-trend-detection:
-      type: object
-      properties:
-        dataPoints:
-          type: array
-          items:
-            type: number
-      required:
-      - dataPoints
     predict-spotify-popularity:
       type: object
       properties:
@@ -10189,16 +9600,7 @@ components:
       - energy
       - valence
       - tempo
-    youtube-comment-sentiment:
-      type: object
-      properties:
-        texts:
-          type: array
-          items:
-            type: string
-      required:
-      - texts
-    reddit-anomaly-detection:
+    spotify-growth-forecast:
       type: object
       properties:
         dataPoints:
@@ -10207,7 +9609,88 @@ components:
             type: number
       required:
       - dataPoints
-    classify-twitch-games:
+    discord-channel-comparison:
+      type: object
+      properties:
+        texts1:
+          type: array
+          items:
+            type: string
+        texts2:
+          type: array
+          items:
+            type: string
+      required:
+      - texts1
+      - texts2
+    facebook-comment-sentiment:
+      type: object
+      properties:
+        text:
+          type: string
+      required:
+      - text
+    analyze-facebook-content:
+      type: object
+      properties:
+        message:
+          type: string
+        imageUrl:
+          type: string
+      required:
+      - message
+    spotify-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    regression:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+      required:
+      - dataPoints
+    spotify-audio-keywords:
+      type: object
+      properties:
+        danceability:
+          type: number
+        energy:
+          type: number
+        valence:
+          type: number
+        tempo:
+          type: number
+        loudness:
+          type: number
+        speechiness:
+          type: number
+        acousticness:
+          type: number
+        instrumentalness:
+          type: number
+        liveness:
+          type: number
+      required:
+      - danceability
+      - energy
+      - valence
+      - tempo
+    bluesky-trend-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    linkedin-content-clustering:
       type: object
       properties:
         texts:
@@ -10216,7 +9699,120 @@ components:
             type: string
       required:
       - texts
-    linkedin-growth-forecast:
+    github-issue-sentiment:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    predict-trend:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    discord-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    threads-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    classify-image:
+      type: object
+      properties:
+        imageUrl:
+          type: string
+        labels:
+          type: array
+          items:
+            type: string
+      required:
+      - imageUrl
+      - labels
+    classify-linkedin-topics:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    mastodon-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    threads-sentiment-analysis:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    tiktok-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    linkedin-post-comparison:
+      type: object
+      properties:
+        text1:
+          type: string
+        text2:
+          type: string
+      required:
+      - text1
+      - text2
+    linkedin-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    facebook-visual-comparison:
+      type: object
+      properties:
+        imageUrl1:
+          type: string
+        imageUrl2:
+          type: string
+      required:
+      - imageUrl1
+      - imageUrl2
+    tiktok-follower-forecast:
       type: object
       properties:
         dataPoints:
@@ -10232,42 +9828,197 @@ components:
           type: string
       required:
       - imageUrl
-    predict-discord-engagement:
+    predict-twitter-engagement:
       type: object
       properties:
-        messageLen:
+        textLen:
           type: number
-        emojiCount:
+        hashtagCount:
           type: number
         mentionCount:
           type: number
-        reactionCount:
+        linkCount:
           type: number
-        replyCount:
+        questionCount:
+          type: number
+        exclamationCount:
+          type: number
+        likes:
+          type: number
+        retweets:
+          type: number
+        replies:
           type: number
       required:
-      - messageLen
-    spotify-track-comparison:
+      - textLen
+      - likes
+      - retweets
+    instagram-follower-forecast:
       type: object
       properties:
-        track1:
-          type: object
-        track2:
-          type: object
+        dataPoints:
+          type: array
+          items:
+            type: number
       required:
-      - track1
-      - track2
-    twitter-tweet-comparison:
+      - dataPoints
+    twitch-viewer-trends:
       type: object
       properties:
-        text1:
-          type: string
-        text2:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    bluesky-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    facebook-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    ab-test:
+      type: object
+      properties:
+        groupA:
+          type: array
+          items:
+            type: number
+        groupB:
+          type: array
+          items:
+            type: number
+      required:
+      - groupA
+      - groupB
+    youtube-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    classify-bluesky-topics:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    predict-twitch-viewers:
+      type: object
+      properties:
+        titleLen:
+          type: number
+        gamePopularity:
+          type: number
+        durationMinutes:
+          type: number
+        followerCount:
+          type: number
+      required:
+      - titleLen
+      - durationMinutes
+    pinterest-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    analyze-youtube-thumbnails:
+      type: object
+      properties:
+        imageUrls:
+          type: array
+          items:
+            type: string
+      required:
+      - imageUrls
+    twitter-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    analyze-instagram-images:
+      type: object
+      properties:
+        imageUrls:
+          type: array
+          items:
+            type: string
+      required:
+      - imageUrls
+    classify-instagram-content:
+      type: object
+      properties:
+        text:
           type: string
       required:
-      - text1
-      - text2
+      - text
+    mastodon-trend-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    predict-pinterest-engagement:
+      type: object
+      properties:
+        titleLen:
+          type: number
+        descLen:
+          type: number
+        linkCount:
+          type: number
+        boardFollowers:
+          type: number
+      required:
+      - titleLen
+    linkedin-sentiment-analysis:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
     linkedin-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    twitch-keyword-extraction:
       type: object
       properties:
         texts:
@@ -10287,7 +10038,21 @@ components:
           type: string
       required:
       - industry
-    analyze-twitch-content:
+    detect-faces:
+      type: object
+      properties:
+        imageUrl:
+          type: string
+      required:
+      - imageUrl
+    analyze-text:
+      type: object
+      properties:
+        text:
+          type: string
+      required:
+      - text
+    classify-threads-topics:
       type: object
       properties:
         texts:
@@ -10296,16 +10061,7 @@ components:
             type: string
       required:
       - texts
-    instagram-visual-trends:
-      type: object
-      properties:
-        imageUrls:
-          type: array
-          items:
-            type: string
-      required:
-      - imageUrls
-    reddit-toxicity-detection:
+    instagram-content-clustering:
       type: object
       properties:
         texts:
@@ -10314,26 +10070,63 @@ components:
             type: string
       required:
       - texts
-    cluster-data:
+    twitch-chat-sentiment:
       type: object
       properties:
-        dataPoints:
+        texts:
           type: array
-        k:
+          items:
+            type: string
+      required:
+      - texts
+    facebook-post-keywords:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    youtube-comment-sentiment:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    discord-toxicity-detection:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    SentimentResponse:
+      type: object
+      properties:
+        score:
           type: number
+        sentiment:
+          type: string
       required:
-      - dataPoints
-      - k
-    classify-facebook-topics:
+      - score
+      - sentiment
+    twitter-tweet-comparison:
       type: object
       properties:
-        texts:
-          type: array
-          items:
-            type: string
+        text1:
+          type: string
+        text2:
+          type: string
       required:
-      - texts
-    github-growth-forecast:
+      - text1
+      - text2
+    twitch-anomaly-detection:
       type: object
       properties:
         dataPoints:
@@ -10342,3 +10135,210 @@ components:
             type: number
       required:
       - dataPoints
+    predict-mastodon-engagement:
+      type: object
+      properties:
+        textLen:
+          type: number
+        boostCount:
+          type: number
+        favouriteCount:
+          type: number
+        replyCount:
+          type: number
+      required:
+      - textLen
+    classify-twitter-topics:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    discord-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    bluesky-sentiment-analysis:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    bluesky-post-comparison:
+      type: object
+      properties:
+        text1:
+          type: string
+        text2:
+          type: string
+      required:
+      - text1
+      - text2
+    facebook-content-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    instagram-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    mastodon-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    mastodon-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+      - dataPoints
+    youtube-topic-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    bluesky-toxicity-detection:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    twitter-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    predict-youtube-views:
+      type: object
+      properties:
+        titleLen:
+          type: number
+        descLen:
+          type: number
+        hasNumbers:
+          type: boolean
+        hasEmoji:
+          type: boolean
+        wordCount:
+          type: number
+        likes:
+          type: number
+        comments:
+          type: number
+      required:
+      - titleLen
+      - descLen
+      - wordCount
+      - likes
+      - comments
+    twitter-toxicity-detection:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
+    predict-linkedin-engagement:
+      type: object
+      properties:
+        textLen:
+          type: number
+        hashtagCount:
+          type: number
+        linkCount:
+          type: number
+        imageCount:
+          type: number
+        commentCount:
+          type: number
+        likeCount:
+          type: number
+      required:
+      - textLen
+    predict-tiktok-virality:
+      type: object
+      properties:
+        titleLen:
+          type: number
+        descLen:
+          type: number
+        duration:
+          type: number
+        hashtagCount:
+          type: number
+        emojiCount:
+          type: number
+        views:
+          type: number
+        likes:
+          type: number
+        comments:
+          type: number
+        shares:
+          type: number
+      required:
+      - titleLen
+      - duration
+      - views
+      - likes
+    spotify-track-comparison:
+      type: object
+      properties:
+        track1:
+          type: object
+        track2:
+          type: object
+      required:
+      - track1
+      - track2
+    mastodon-toxicity-detection:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+      - texts
