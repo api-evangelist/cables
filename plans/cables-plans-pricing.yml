@@ -15,3 +15,18 @@ plans:
   note: Flat $0.05 per call across all 168 tools; no free tier, no subscription. Unpaid calls receive
     HTTP 402.
 note: No subscription plans or free tier published; pricing is exclusively per-call via x402.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - hybrid
+  units:
+  - request
+  plans:
+  - name: Pay-per-call
+    access: other
+    model: hybrid
+    model_how: derived
+    units:
+    - request
+    periods: []
