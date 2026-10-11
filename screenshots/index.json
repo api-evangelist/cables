@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "cables",
+    "captured_at": "2026-10-11T184002",
+    "source_url": "https://mcp.cables.live",
+    "source_type": "fallback-domain",
+    "file": "cables-2026-10-11T184002.png",
+    "bytes": 6289,
+    "capture": "playwright-local"
+  }
+]
