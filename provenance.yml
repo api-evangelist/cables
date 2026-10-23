@@ -24,7 +24,7 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
-  kin/checks-2026-09-24T161608.yml:
+  kin/checks-2026-10-11T110117.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-18T231945.yml:
@@ -63,24 +63,46 @@ artifacts:
   kin/score-2026-09-24T161608.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T210408.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T232841.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T000835.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T024842.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-11T110117.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   lifecycle/cables-lifecycle.yml:
     method: searched
     evidence: declared in the artifact
   llms/cables-llms.txt:
     method: searched
     evidence: 'derive-llms-provenance.py: harvested'
+  mcp/cables-mcp-tools.json:
+    method: unknown
+    evidence: no authorship recorded
   mcp/cables-mcp.yml:
     method: searched
     evidence: declared in the artifact
   mcp/cables-tool-crosswalk.yml:
     method: derived
     evidence: declared in the artifact
-  openapi/cables-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+  openapi/_original/cables-openapi.yml:
+    method: harvested
+    evidence: the same operations as https://mcp.cables.live/openapi.yaml (sha256 6eef8f6b984a, fetched
+      2026-10-04)
+  openapi/cables-tools-api-openapi.yml:
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   overlays/cables-openapi-overlay.yaml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   plans/cables-plans-pricing.yml:
     method: unknown
     evidence: no authorship recorded
