@@ -1,4 +1,4 @@
-# cables
+# Cables
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,4 +64,117 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-An agent-native, pay-per-call MCP resource server exposing 168 TensorFlow.js machine-learning analytics tools (image classification, object detection, faces, NLP sentiment/toxicity/keywords/embeddings, forecasting/anomaly/clustering, and per-platform social-media analytics for YouTube, Instagram, TikTok, Twitter/X, Facebook, Discord, Twitch, Reddit, LinkedIn, Threads, Bluesky, Mastodon, GitHub, Spotify and Pinterest). Every tool call is metered at $0.05 via the x402 payment protocol, settled in USDC on Solana devnet; unpaid calls receive an HTTP 402 challenge. The live MCP server (https://mcp.cables.live/mcp) and OpenAPI 3.0.0 contract are publicly discoverable.
+An agent-native, pay-per-call MCP resource server exposing 168 TensorFlow.js machine-learning analytics tools (image classification, object detection, NLP, forecasting, and social-media analytics for YouTube, Instagram, TikTok, Twitter/X, Facebook, Discord, and Twitch). Each tool call is monetized via the x402 payment protocol at $0.05 per call, settled in USDC on Solana devnet. Unpaid requests receive an HTTP 402 challenge.
+
+**Areas:** MCP Server · Agent-Native · x402 · pay-per-call · Machine Learning · tensorflow-js · Natural Language Processing · Computer Vision · Social Media Analytics · OpenAPI · Solana · Crypto Payments
+
+## Cables on APIs.io
+
+Everything profiled for Cables is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/cables/](https://apis.io/providers/cables/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Cables Tools API](https://apis.io/apis/cables/cables-tools-api/) — The Tools API from Cables — 168 operation(s) for tools.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (2)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [Moved to /providers/cables/](https://apis.io/servers/cables/mcp-endpoint-live/)
+- [tensorflow-social-mcp](https://apis.io/servers/cables/tensorflow-social-mcp/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Cables Agentic Access](https://apis.io/agentic-access/cables/cables-agentic-access/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Cables Openapi Overlay](https://apis.io/overlays/cables/cables-openapi-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Cables Authentication](https://apis.io/security/cables/cables-authentication/)
+- [Cables Domain Security](https://apis.io/security/cables/cables-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Cables Plans Pricing](https://apis.io/plans/cables/cables-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Cables Rate Limits](https://apis.io/rate-limits/cables/cables-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://cables.live)
+
+## API Evangelist rating
+
+**Kin Score 24.2** — emerging · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.7 |
+| Contract quality | 40.4 |
+| Contract governance | 4.5 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 20.8 |
+| Access clarity | 21.1 |
+
+**Agent readiness 31.4** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 14.2** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/cables/](https://apis.io/providers/cables/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Cables: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/cables/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
